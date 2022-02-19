@@ -10,6 +10,9 @@
 
 # video crianças - legendado: https://www.youtube.com/watch?v=pdhqwbUWf4U
 
+# https://abj.org.br/pdf/estudo-camaras-criminais-tj-sp.pdf
+
+# API do CNJ
 
 # aula01 ------------------------------------------------------------------
 
@@ -132,5 +135,103 @@ remotes::install_github("jjesusfilho/stj")
 
 
 # aula03 ------------------------------------------------------------------
+# file:///H:/My%20Drive/P%C3%B3s%20Jurimetria%20-%20PUC-PR/JOS%C3%89%20DE%20JESUS%20FILHO_Aula%2003.mp4
 
+# inspecionar cada um desses dados para extrair insights
+
+# ementa, relator, partes, dispositivo, movimentação, etc
+# ciência de dados no R / r4ds
+
+## tidyverse
+# carrregar pacote
+# dplyr, tidyr, stringr
+
+## dplyr
+# select - extrair colunas
+# filter - extrair linhas, testes lógicos
+# arrange - ordenar, desc()
+# count - contar, sort = T
+# mutate - modificar ou criar colunas,
+install.packages("lubridate")
+# summarise - resumir os dados
+# group_by - agrupar os dados
+# join_ - juntar os dados com base em uma ou mais colunas
+# case_when
+
+# olhar mês de julgamento, ano, dia, frequencias, etc
+
+## pipe, diz "então"
+
+## tidyr
+# separate - separar origem, comarca, foro (/)
+# unite
+# pivot_wider
+# pivot_longer
+
+## stringr
+
+
+# aula04 ------------------------------------------------------------------
+# file:///H:/My%20Drive/P%C3%B3s%20Jurimetria%20-%20PUC-PR/JOS%C3%89%20DE%20JESUS%20FILHO_Aula%2004.mp4
+
+## manuseio de texto, string R
+# https://direito.consudata.com.br/jurimetria/strings1/
+
+# str_c
+# str_length
+# str_sub
+# str_trim
+# str_squish
+
+# aplicar squish com mutate
+
+# case_when
+
+
+## regex
+# expressões regulares
+# https://direito.consudata.com.br/shiny/stringr/
+# identificar padrões em texto
+
+# str_extract
+# str_replace / str_remove
+# str_detect
+
+# combinação str_detect + case_when
+
+
+
+# aula05 ------------------------------------------------------------------
+# file:///H:/My%20Drive/P%C3%B3s%20Jurimetria%20-%20PUC-PR/JOS%C3%89%20DE%20JESUS%20FILHO_Aula%2005.mp4
+
+# agora vamos juntar tudo, manusear os dados para analisar
+
+# primeira limpeza (seleção das colunas úteis)
+# dispositivo: criar uma coluna para classificar usando função, ajuda na maior
+# parte dos casos. pode ser necessário trabalho manual
+
+# str_detect pra ver se trata de prescrição
+
+# partes: examinar os dados, filtrar apenas pelo apelante
+# verificar se há duplicados: vctrs, duplicate_detect
+# não fazer.......
+
+# detectar ministerio publico
+# reduzir a base, organizar que permita analisar
+# análise exploratória
+
+# quem tende a ter mais sucesso?
+
+# jurisminer:
+# tempo_movimentacao
+# group_by + summarise para olhar por grupos
+
+# arrumar nome das câmaras (só números e maiúsculas)
+
+# join tempo do processo
+# ver se tempo de tramitação e prescrição se correlacionam
+
+# gráfico, gg_decisao
+
+# citação: minuto 56
 
