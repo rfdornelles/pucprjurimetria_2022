@@ -9,12 +9,28 @@
 
 # Instalação de pacotes ---------------------------------------------------
 
+# Lembrando que a INSTALAÇÃO só precisa ser feita uma vez com os comandos
+# install.packages() e afins
+
+# Contudo, o pacote SEMPRE precisará ser carregado quando abrirmos uma nova
+# sessão no R com o comando library()
+# Aqui vamos fazer isso mais pra fente (enquanto falamos, deixamos rodando)
+
+install.packages("tidyverse") # nos ajuda a trabalhar com os dados
+install.packages("writexl")   # permite salvar arquivos de excel
+install.packages("remotes")   # permite baixar pacotes adicionais
 
 
-# caso eu não tenha instalado preciso rodar:
-# install.packages("remotes")
-# remotes::install_github("jjesusfilho/tjsp")
-# install.packages("writexl")
+## instalação de pacotes jurimétricos
+remotes::install_github("jjesusfilho/tjsp")
+remotes::install_github("jjesusfilho/JurisVis")
+remotes::install_github("courtsbr/JurisMiner")
+remotes::install_github("jjesusfilho/stf")
+remotes::install_github("jjesusfilho/stj")
+
+## outros pacotes úteis para jurimetria
+remotes::install_github("abjur/abjData")
+remotes::install_github("abjur/abjutils")
 
 # Referências -------------------------------------------------------------
 
@@ -65,12 +81,12 @@
 # Vamos ter em mente o ciclo descrito acima e tentar aplicar para essa situação
 # concreta.
 
-  # | Tribunal:         | TJ-SP
-  # | Espaço de tempo:  | Considerando que o HC é recente, de 2018, o foco será a
-  #                     |  partir dele.
-  # | Instância         | Apenas 2º grau
-  # | Classe processual | Habeas corpus apenas
-  # | Termo de pesquisa | Quero todas as decisões que mencionem o HC 165.704
+# | Tribunal:         | TJ-SP
+# | Espaço de tempo:  | Considerando que o HC é recente, de 2018, o foco será a
+#                     |  partir dele.
+# | Instância         | Apenas 2º grau
+# | Classe processual | Habeas corpus apenas
+# | Termo de pesquisa | Quero todas as decisões que mencionem o HC 165.704
 
 # Tendo isso em mente, vou até a busca de jurisprudência de segundo grau do
 # fazer testes de termos de pesquisa que me interesssem.
@@ -148,9 +164,8 @@
 # Raspando os dados: pacote tjsp do R -------------------------------------
 
 # após instalar:
-library(tjsp) # carrega o pacote propriamente dito
 library(tidyverse) # nosso "canivete suíço" para análise de dados
-
+library(tjsp) # carrega o pacote propriamente dito
 
 #  O primeiro passo, então, é requisitar ao pacote que baixe os dados que
 # queremos.
@@ -186,148 +201,155 @@ pasta <- "data-raw/exemplo_hc_coletivo"
 
 ###############################################################################
 # Vou criar essa pasta no meu computador para salvar os resultados:
+dir.create("data-raw", showWarnings = FALSE) # cria pasta padrão para dados crus
 dir.create(pasta, showWarnings = FALSE)
 
 # Realizar a pesquisa
 
-baixar_cjsg(livre = exp,
-            classe = "",
-            assunto = "",
-            orgao_julgador = "",
-            inicio = "",
-            fim = "",
-            inicio_pb = "",
-            fim_pb = "",
-            tipo = "A",
-            n = 1, # na "vida real" deixaremos NULL ou omitiremos essa linha
-            diretorio = pasta)
+# Aqui é onde colocamos os parâmetros de pesquisa que definimos anteriormente
+# se não quisermos colocar nada, podemos deixar em branco (remover), deixar
+# como está ou mesmo comentar a linha para que ela seja "ignorada"
+tjsp_baixar_cjsg(livre = exp,
+                 classe = "",
+                 assunto = "",
+                 orgao_julgador = "",
+                 inicio = "",
+                 fim = "",
+                 inicio_pb = "",
+                 fim_pb = "",
+                 tipo = "A",
+                 n = 1, # na "vida real" deixaremos NULL ou omitiremos essa linha
+                 diretorio = pasta)
 
-A depender do tamanho da pesquisa, ela pode levar alguns minutos (ou mesmo algumas horas).
+# A depender do tamanho da pesquisa, ela pode levar alguns minutos (ou mesmo
+# muitas horas).
 
-Com isso, eu já tenho condições preliminares de colocar em uma mesma tabela todas as informações básicas da pesquisa. Vou poder saber quantidade, assunto de cada uma delas, qual foi a data de julgamento, relator(a), ementa, etc.
+# Com isso, eu já tenho condições preliminares de colocar em uma mesma tabela
+# todas as informações básicas da pesquisa. Vou poder saber quantidade, assunto
+# de cada uma delas, qual foi a data de julgamento, relator(a), ementa, etc.
 
-A função para essa leitura preliminar é `ler_cjsg()` na qual eu vou colocar como parâmetro a pasta que utilizei para salvar a busca.
+# A função para essa leitura preliminar é `tjsp_ler_cjsg()` na qual eu vou colocar
+# como parâmetro a pasta que utilizei para salvar a busca.
 
-Posso criar uma tabela com isso e até mesmo exportar para excel ou outros formatos:
+# Posso criar uma tabela com isso e até mesmo exportar para excel ou outros
+# formatos:
 
-```{r warning=FALSE, paged.print=TRUE}
 # ler a tabela
-tabela <- ler_cjsg(diretorio = pasta)
+tabela <- tjsp_ler_cjsg(diretorio = pasta)
 
 # olhar os resultados
 tabela
-```
 
-Podem acontecer alguns erros de leitura, mas em geral não vai ser um problema.
+# Podem acontecer alguns erros de leitura, mas em geral não vai ser um problema.
 
-Exemplo de exportação para o formato excel:
+# Exportação para Excel ---------------------------------------------------
 
-```{r, eval = FALSE}
+# Nossas(os) colegas, sócios(as), chefes, clientes, etc muitas vezes não terão
+# qualquer domínio do R. Por isso, pode ser útil exportar nossa base ou nossas
+# análises para outro formato. Isso é MUITO fácil de fazer no R e podemos
+# fazê-lo a qualquer momento (tanto agora, com dados "crus", quanto mais
+# próximos de concluir nossa análise)
 
-writexl::write_xlsx(tabela, path = "data-raw/tabela_basica_jurisprudencia.xlsx")
-```
+# Exemplo de exportação para o formato excel:
 
-E ela poderá ser lida normalmente:
+library(writexl) # lembrar de carregar os pacotes que vamos usar!
+write_xlsx(tabela, path = "data-raw/tabela_basica_jurisprudencia.xlsx")
 
-![](man/excel.png)
+# Salvar em RDS:
+# O R possui um formato nativo de arquivo, chamado .rds. Pode ser conveniente
+# salvar bases intermediárias ou mesmo finais nesse formato para economizar
+# tempo de trabalho e dispensar baixar novamente os dados dos Tribunais.
+# Isso pode ser feito:
 
-Essa primeira tabela é útil para algmas análises exploratórias simples:
+write_rds(tabela, file = "data-raw/base_original.rds")
 
-```{r }
+# E, para carregar:
+read_rds("data/base_original.rds")
 
+# Lembrando que, para poder usar na memória devemos salvar em um objeto:
+# base <- read_rds("data/base_original.rds")
+
+# Algumas análises simples ------------------------------------------------
+
+# Aqui vamos apenas ILUSTRAR algumas análises simples.
 # Quantas decisões temos?
 
 nrow(tabela)
-```
-
-```{r warning=FALSE, paged.print=TRUE}
 
 # Quais as comarcas com mais decisões?
 
 tabela %>%
-  dplyr::group_by(comarca) %>% # agrupar por comarcas
-  dplyr::count(sort = TRUE) %>% # contar ocorrências
-  head() %>% # ver os primeiros resultados
-  knitr::kable() # gerar tabela
-```
+  group_by(comarca) %>% # agrupar por comarcas
+  count(sort = TRUE) %>% # contar ocorrências
+  head()  # ver os primeiros resultados
 
-Além dessas análises simples, essa tabela inicial é importante para permitir que sejam baixados os andamentos, as partes, resultado do julgamento e o texto do acórdão em si.
+
+# Além dessas análises simples, essa tabela inicial é importante para permitir
+# que sejam baixados os andamentos, as partes, resultado do julgamento e o texto
+# do acórdão em si.
 
 ### Baixando o restante dos dados
 
-Embora o que se possa obter até aqui já seja provavelmente suficiente para uma análise preliminar de viabilidade do tema, normalmente vamos querer extrair mais informações do Tribunal.
+# Embora o que se possa obter até aqui já seja provavelmente suficiente para uma
+# análise preliminar de viabilidade do tema, normalmente vamos querer extrair
+# mais informações do Tribunal.
 
-No caso do TJ-SP, para as etapas a seguir é fundamental que possua um login no sistema e-saj e que utilize aqui uma função de autenticação. Não sei informar se é preciso possuir login de advogado(a) ou se qualquer um basta. Em todo caso, recomendo se habilitar no sistema: <https://esaj.tjsp.jus.br/sajcas/login?service=https%3A%2F%2Fesaj.tjsp.jus.br%2Fesaj%2Fj_spring_cas_security_check#>
+# No caso do TJ-SP, para as etapas a seguir é fundamental que possua um login
+# no sistema e-saj e que utilize aqui uma função de autenticação.
+# Não sei informar se é preciso possuir login de advogado(a) ou se qualquer um
+# basta. Essas políticas são do próprio Tribunal.
+# Em todo caso, recomendo se habilitar no sistema:
+# <https://esaj.tjsp.jus.br/sajcas/login?service=https%3A%2F%2Fesaj.tjsp.jus.br%2Fesaj%2Fj_spring_cas_security_check#>
 
-Feito o cadastro, para poder acessar os dados o pacote possui uma função que realiza para nós a autenticação:
-
-```{r eval=FALSE, include=TRUE}
-
-# asssim, ela irá abrir uma janela pedindo login e senha
-tjsp::autenticar()
+# Feito o cadastro, para poder acessar os dados o pacote possui uma função que
+# realiza para nós a autenticação: # asssim, ela irá abrir uma janela pedindo login e senha
+autenticar()
 
 # posso também colocar diretamente esses dados nos parâmetros da função
-# contudo, MUITO cuidado se isso for se tornar público uma vez que o login é o próprio CPF e a senha tampouco queremos que seja usada por terceiros:
+# contudo....
+# MUITO cuidado se isso for se tornar público uma vez que o login é o
+# próprio CPF e a senha tampouco queremos que seja usada por terceiros:
 
-tjsp::autenticar(login = <seu login>, password = <sua senha>)
+# autenticar(login = <seu login>, password = <sua senha>)
 
-
-```
-
-Feita a autenticação, podemos prosseguir baixando mais dados:
+# Feita a autenticação, podemos prosseguir baixando mais dados:
 
 ### Baixar detalhes:
 
-Para isso vamos usar a função `tjsp_baixar_cposg()` colocando como parâmetros a coluna da tabela onde estão os números do processo e a pasta onde queremos que tudo seja salvo.
-
-```{r baixar_detalhes}
+# Para isso vamos usar a função `tjsp_baixar_cposg()` colocando como parâmetros
+# a coluna da tabela onde estão os números do processo e a pasta onde queremos
+# que tudo seja salvo.
 
 # crio uma nova pasta dentro da pasta anterior
 # definir o nome:
 pasta_detalhes <- paste0(pasta, "/detalhes")
 
 # criar a pasta:
-usethis::use_directory(pasta_detalhes)
-```
+dir.create(pasta_detalhes, showWarnings = FALSE)
 
-```{r, eval=FALSE}
 # baixar os detalhes em si
 tjsp_baixar_cposg(processos = tabela$processo, diretorio = pasta_detalhes)
-```
 
-### Baixar os acórdãos:
+# Ler os arquivos baixados ------------------------------------------------
 
-O pacote também permite baixar o inteiro teor dos acórdãos (em .pdf) para depois poder analisar o texto com o R. Isso pode levar alguns minutos ou mesmo horas caso o volume seja grande.
+# Agora que baixamos os dados podemos usar outas funções do pacote para extrair
+# mais informações de nosso interesse. Lembrando que a etapa de baixar não
+# precisa ser repetida no futuro, uma vez que os arquivos estarão salvos no seu
+# disco.
 
-A função é `tjsp_baixar_acordaos_cposg()`e vamos usar os mesmos parâmetros da anterior
-
-```{r baixar_acordao, eval=FALSE, warning=FALSE}
-
-# dou um nome para uma nova pasta, para que tudo fique organizado
-pasta_acordaos <- paste0(pasta, "/acordaos")
-
-# criar a pasata:
-usethis::use_directory(pasta_acordaos)
-```
-
-```{r, eval=FALSE}
-# rodar a função que baixa
-tjsp::tjsp_baixar_acordaos_cposg(
-  processos = tabela$processo,
-  diretorio = pasta_acordaos)
-```
-
-## Ler os arquivos baixados
-
-Agora que baixamos os dados podemos usar outas funções do pacote para extrair mais informações de nosso interesse. Lembrando que a etapa de baixar não precisa ser repetida no futuro, uma vez que os arquivos estarão salvos no seu disco.
-
-Apenas iremos repetir a etapa de baixar do Tribunal caso queiramos dados mais atualizados ou novas decisões não abrangidas pela busca inicial. Nesse caso, pode ser uma boa usar na nova busca os parâmetros que permitem definir as datas de início e fim, para abranger apenas as decisões que já não foram baixadas.
+# Apenas iremos repetir a etapa de baixar do Tribunal caso queiramos dados mais
+# atualizados ou novas decisões não abrangidas pela busca inicial.
+# Nesse caso, pode ser uma boa usar na nova busca os parâmetros que permitem
+# definir as datas de início e fim, para abranger apenas as decisões que já não
+# foram baixadas.
 
 ### Ler as partes e andamentos
 
-Pra isso vamos criar duas variáveis que vão receber o resultado das funções que buscam, respectivamente, as partes e os andamentos. O parâmetro usado nas duas é o mesmo: o diretorio, que será a a pasta que criamos e salvamos como pasta_detalhes.
+# Pra isso vamos criar duas variáveis que vão receber o resultado das funções
+# que buscam, respectivamente, as partes e os andamentos. O parâmetro usado nas
+# duas é o mesmo: o diretorio, que será a a pasta que criamos e salvamos como
+# pasta_detalhes.
 
-```{r warning=FALSE}
 # ler as partes
 partes <- tjsp_ler_partes(diretorio = pasta_detalhes)
 
@@ -335,58 +357,103 @@ partes <- tjsp_ler_partes(diretorio = pasta_detalhes)
 partes
 
 # ler os andamentos
-andamentos <- tjsp::ler_movimentacao_cposg(diretorio = pasta_detalhes)
+andamentos <- ler_movimentacao_cposg(diretorio = pasta_detalhes)
 
 # ver o resultado
 andamentos
-```
+
 
 ### Ler dispositivo da decisão
 
-Embora tenhamos baixado o inteiro teor dos acórdãos, é razoavelmente complexo manusear esses arquivos. Temos uma vantagem no TJ-SP que é o fato de a tira de julgamento, isto é, o resultado do que foi decidido pelo Tribunal fica num campo explicitamente separado.
+# Embora tenhamos baixado o inteiro teor dos acórdãos, é razoavelmente complexo
+# manusear esses arquivos. Temos uma vantagem no TJ-SP que é o fato de a tira de
+# julgamento, isto é, o resultado do que foi decidido pelo Tribunal fica num
+# campo explicitamente separado.
 
-Isso permite saber o resultado dos julgamentos sem necessariamente ter que ler os arquivos .pdf.
+# Isso permite saber o resultado dos julgamentos sem necessariamente ter que ler
+# os arquivos .pdf.
 
-```{r}
 # ler o dispositivo das decisões
 dispositivo <- tjsp_ler_dispositivo(diretorio = pasta_detalhes)
 
 # ver o resultado
 dispositivo
-```
 
-## Alguns exemplos de análises
+### Baixar os acórdãos:
 
-Temos então baixados os dados de todas as decisões que atenderam ao nosso termo de pesquisa definido acima.
+# ATENÇÃO: você provavelmente NÃO precisa baixar os acórdãos nesse momento.
+# É um nível de análise mais complexo e trabalhoso, leva tempo e pode ser
+# frustrante no começo: a conexão pode cair, os arquivos são um pouco chatos
+# de manusear, etc. Mas não poderíamos deixar de mostrar isso pra vocês:
 
-Agora, podemos fazer análises mais aprofundadas. Sugere-se começar com perguntas mais amplas e, depois, ir aprofundando nos cruzamentos. Também, com apoio de metodologias de pesquisa e de estatísticas é possível aplicar técnicas mais robustas de análise, inclusive machine learning, análise de linguagem natural e outras ferramentas. O céu é o limite!
+# O pacote também permite baixar o inteiro teor dos acórdãos (em .pdf) para
+# depois poder analisar o texto com o R.
+# Isso pode levar minutos, horas ou mesmo dias caso o volume seja grande.
 
-Naturalmente, antes de obter dados confiáveis, é preciso conhecer bem os dados e verificar inconsistências, realizar filtragens e adaptações.
+# A função é `tjsp_baixar_acordaos_cposg()`e vamos usar os mesmos parâmetros da
+# anterior
 
-Alguns exemplos de perguntas que podem ser interessantes:
+# dou um nome para uma nova pasta, para que tudo fique organizado
+pasta_acordaos <- paste0(pasta, "/acordaos")
 
-1.  Quantas decisões concedem o HC e quantas negam?
-2.  Quais as câmaras que mais negam? E quais mais deferem?
-3.  Distribuição das ações ao longo do tempo. Há algum padrão? Há alguma sazonalidade? Há algum pico?
-4.  Quanto tempo essas decisões tramitam?
-5.  Há liminar? Em quais? A liminar tende a ser confirmada?
-6.  A audiência pública ocorrida em 14/06 mudou as decisões que vieram depois?
-7.  É possível agrupar comarcas em razão do peril das decisões proferidas?
-8.  etc
+# criar a pasata:
+dir.create(pasta_acordaos, showWarnings = FALSE)
 
-Claro que nem sempre todas as perguntas poderão ser respondidas com os dados que possuímos. Como nosso objetivo aqui é meramente exemplificar, vamos apenas demonstrar um gráfico simples mostrando como foram julgadas as causas.
+# rodar a função que baixa
+tjsp_baixar_acordaos_cposg(
+  processos = tabela$processo,
+  diretorio = pasta_acordaos)
 
-```{r}
-library(ggplot2) # carrega biblioteca que desenha gráficos
+
+# Alguns exemplos de análises ---------------------------------------------
+
+# Temos então baixados os dados de todas as decisões que atenderam ao nosso
+# termo de pesquisa definido acima.
+
+# Agora, podemos fazer análises mais aprofundadas. Sugere-se começar com
+# perguntas mais amplas e, depois, ir aprofundando nos cruzamentos.
+# Também, com apoio de metodologias de pesquisa e de estatísticas é possível
+# aplicar técnicas mais robustas de análise, inclusive machine learning,
+# análise de linguagem natural e outras ferramentas. O céu é o limite!
+
+# Naturalmente, antes de obter dados confiáveis, é preciso conhecer bem os dados
+# e verificar inconsistências, realizar filtragens e adaptações.
+
+# Alguns exemplos de perguntas que podem ser interessantes:
+
+# 1.  Quantas decisões concedem o HC e quantas negam?
+# 2.  Quais as câmaras que mais negam? E quais mais deferem?
+# 3.  Distribuição das ações ao longo do tempo. Há algum padrão? Há alguma
+# sazonalidade? Há algum pico?
+# 4.  Quanto tempo essas decisões tramitam?
+# 5.  Há liminar? Em quais? A liminar tende a ser confirmada?
+# 6.  A audiência pública ocorrida em 14/06 mudou as decisões que vieram depois?
+# 7.  É possível agrupar comarcas em razão do peril das decisões proferidas?
+# 8.  etc
+
+# Claro que nem sempre todas as perguntas poderão ser respondidas com os dados
+# que possuímos. Como nosso objetivo aqui é meramente exemplificar, vamos apenas
+# demonstrar um gráfico simples mostrando como foram julgadas as causas.
+
+
+# Exemplos de gráficos ----------------------------------------------------
+
+# Esses são EXEMPLOS e servem para ilustrar para vocês o potencial do R.
+# Caso vejam valor nisso, sugiro seguir o material extra de "R para Ciência de
+# Dados" e comecem a explorar os inúmeros recursos que o R tem para visualizações
+# Isso é um grande e vasto universo de possibilidades
+
+
+# Gráfico 1 ---------------------------------------------------------------
 
 dispositivo %>%
-  dplyr::filter(!is.na(dispositivo)) %>% # tirar os vazios
-  dplyr::mutate(
+  filter(!is.na(dispositivo)) %>% # tirar os vazios
+  mutate(
     # avaliar qual foi o resultado da decisão
     resultado = tjsp_classificar_writ(dispositivo)
   ) %>%
   # conta os resultados
-  dplyr::count(resultado) %>%
+  count(resultado) %>%
   # cria um gráfico
   ggplot(aes(x = forcats::fct_reorder(resultado, n, .desc = T), y = n)) +
   geom_col() +
@@ -394,20 +461,21 @@ dispositivo %>%
   labs(x = "Decisão", y = "Quantidade",
        title = "Aplicação do TJ-SP do HC Coletivo 165.704",
        subtitle = "Decisões proferidas em habeas corpus")
-```
 
-```{r message=FALSE}
+
+# Gráfico 2 ---------------------------------------------------------------
+
 
 tabela %>%
-  dplyr::left_join(dispositivo) %>%
-  dplyr::filter(classe == "Habeas Corpus Criminal", !is.na(dispositivo)) %>%
-   dplyr::mutate(
+  left_join(dispositivo) %>%
+  filter(classe == "Habeas Corpus Criminal", !is.na(dispositivo)) %>%
+  mutate(
     # avaliar qual foi o resultado da decisão
     resultado = tjsp_classificar_writ(dispositivo),
     orgao_julgador = stringr::str_remove(orgao_julgador, " Câmara de Direito"),
   ) %>%
-  dplyr::group_by(orgao_julgador) %>%
-  dplyr::count(resultado) %>%
+  group_by(orgao_julgador) %>%
+  count(resultado) %>%
   ggplot(aes(x = forcats::fct_reorder(orgao_julgador, n, .desc = T),
              y = n,
              fill = resultado)) +
@@ -418,4 +486,5 @@ tabela %>%
        title = "Decisões do TJ-SP sobre aplicação do HC Coletivo",
        subtitle = "Distribuição por Câmara de Direito Criminal") +
   theme(axis.text.x = element_text(angle = 90))
-```
+
+### FIM?
