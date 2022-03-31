@@ -7,6 +7,11 @@
 ### Live de Estudo de Caso - 31/03/222
 
 
+# Criar projeto -----------------------------------------------------------
+
+# Estamos dentro de um projeto no RStudio? Se não, é hora de estar!
+# Criando projeto no RStudio: <https://livro.curso-r.com/2-3-projetos.html>
+
 # Instalação de pacotes ---------------------------------------------------
 
 # Lembrando que a INSTALAÇÃO só precisa ser feita uma vez com os comandos
@@ -36,7 +41,6 @@ remotes::install_github("abjur/abjutils")
 
 # Instalando R: <https://livro.curso-r.com/1-1-instalacao-do-r.html>
 # Instalando RStudio: <https://livro.curso-r.com/1-2-instalacao-do-rstudio.html>
-# Criando projeto no RStudio: <https://livro.curso-r.com/2-3-projetos.html>
 # Pacote tidyverse: <https://operdata.com.br/blog/tidyverse-os-pacotes-mais-usados-no-r/>
 
 
@@ -83,7 +87,7 @@ remotes::install_github("abjur/abjutils")
 
 # | Tribunal:         | TJ-SP
 # | Espaço de tempo:  | Considerando que o HC é recente, de 2018, o foco será a
-#                     |  partir dele.
+#                     | partir dele.
 # | Instância         | Apenas 2º grau
 # | Classe processual | Habeas corpus apenas
 # | Termo de pesquisa | Quero todas as decisões que mencionem o HC 165.704
@@ -443,6 +447,9 @@ tjsp_baixar_acordaos_cposg(
 # Dados" e comecem a explorar os inúmeros recursos que o R tem para visualizações
 # Isso é um grande e vasto universo de possibilidades
 
+# Por favor, não se "assustem" com o código abaixo. A ideia foi só demonstrar
+# rapidamente o poder do R. Se acharem essa parte interessante, podemos trabalhar
+# mais na próxima live ou com material extra
 
 # Gráfico 1 ---------------------------------------------------------------
 
