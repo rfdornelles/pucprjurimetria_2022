@@ -1,0 +1,1979 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script language="javascript" type="text/JavaScript" src="https://esaj.tjsp.jus.br/sajcas/verificarLogin.js?script=1645371971206"></script><script language="javascript">
+        if (window.sajcas && window.sajcas.usuarioLogadoNoCasServer) {
+            var GATEWAY_TRUE = 'gateway=true', GATEWAY_FALSE = 'gateway=false';
+            var urlRetornoSistema = '';
+            if (urlRetornoSistema === '') {
+                urlRetornoSistema = window.location.href;
+            }
+
+            if (urlRetornoSistema.indexOf(GATEWAY_FALSE) !== -1) {
+                urlRetornoSistema = urlRetornoSistema.replace(GATEWAY_FALSE, GATEWAY_TRUE);
+            } else {
+                urlRetornoSistema.lastIndexOf('?') !== -1 ? urlRetornoSistema += '&' : urlRetornoSistema += '?';
+                urlRetornoSistema += GATEWAY_TRUE;
+            }
+
+            window.location.href = urlRetornoSistema;
+        }
+    </script><title>Portal de Serviços e-SAJ</title>
+<!-- Adicionado aqui para não impactar mobile --><link rel="stylesheet" href="/cposg/softheme/src/css/app.css">
+<link rel="stylesheet" href="/cposg/softheme/src/fonts/saj/styles.css">
+<link rel="stylesheet" href="/cposg/css/formulario.css" type="text/css">
+<link rel="stylesheet" href="/cposg/webjars/select2/3.5.4/select2.css" type="text/css">
+<link rel="stylesheet" href="/cposg/webjars/select2/3.5.4/select2-bootstrap.css" type="text/css">
+<link rel="stylesheet" href="/cposg/css/saj/select2/saj-select2.css">
+<script>
+	window.saj = window.saj || {};
+	window.saj.env = window.saj.env || {};
+	window.saj.env.root = '/cposg';
+	window.saj.env.css = '/cposg/css';
+	window.saj.env.js = '/cposg/js';
+	window.saj.env.imagens = '/cposg/imagens';
+
+	window.saj.cpo = window.saj.cpo || {};
+	// transfere variavel se cpo esta rodando para totem
+	window.saj.cpo.totem = 'false' == 'true';
+
+	window.saj.cpo.instanciaConsulta = {
+		SG5: 'true' == 'true',
+		SG5TJ: 'true' == 'true',
+		SG5CR: 'false' == 'true',
+		value: 'SG5TJ'
+	}; 
+</script><script language="javascript" type="text/JavaScript" src="/cposg/js/jquery/jquery.min.js?n=1620728708"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/jquery/jquery.func_toggle.js?n=dbba8579-c64e-46e6-b602-eb0298c66d7b"></script><script language="javascript" type="text/javascript" src="/cposg/js/jquery/jquery.blockUI.min.js?n=b26cf683-2ae9-4f64-a05b-87ef563a3281"></script><script language="javascript" type="text/javascript" src="/cposg/js/jquery/jquery.browser.min.js?n=ec782e06-c2a9-4b1a-9980-fd968e5b6da3"></script><script language="javascript" type="text/javascript" src="/cposg/webjars/lodash/4.17.5/lodash.js?n=a801ac42-fdf2-4bb4-adaf-30a156882262"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/select2/select2.js?n=2a19f88b-09aa-4115-a1d8-808bf11f0861"></script><script language="javascript" type="text/JavaScript" src="/cposg/webjars/select2/3.5.4/select2_locale_pt-BR.js?n=9c08c83b-397d-4433-bfc0-44f1fa15e204"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-select2.js?n=1353b146-ff2c-4086-87d6-ca9f9e03fb7b"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-web-2.2.41-4.js?n=29da53e0-55a5-45ae-b62e-f3d78ee5a87b"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-tooltip.js?n=089630bc-1148-4029-878b-2cdb35a4a5a0"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-popup-modal-1.0.0-1.js?n=f6523698-35f4-4cde-8c4b-f6dcd7696d00"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-browser.js?n=3ac6329f-6d55-4cf6-bdb6-b5959eb400ff"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-mascara-input.js?n=1e43d4c7-cfd6-4e15-8341-9e937787d6ed"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/saj-numeroProcesso.js?n=719e84f4-7e53-4eca-ac61-7ecdcaa322fa"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj-cpo-cbpesquisa.js?n=3374557194"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/saj/acessibilidade/acessibilidade.js?n=66b042f1-0daf-4409-b59e-7fbe2c52eae6"></script><script language="javascript" type="text/JavaScript" src="/cposg/softheme/src/js/app.js?n=16289891"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js?n=4d0787a6-1ddb-4e76-96e8-05fa0b09763a" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js?n=1791337263" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script><script>
+	(function($){
+		$(function(){
+			var intervalo = 115000;
+			$.saj.manterSessao('/cposg/manterSessao.do', intervalo);
+		});
+				
+	})(jQuery);
+</script><script>
+	window.saj.cpo = window.saj.cpo || {};
+	window.saj.cpo.urlBaseAcessoRecursoProcessoParaUsuario = '/cposg/autorizarAcessoRecursoProcessoParaUsuario.do?processoPK.cdProcesso=RI005XYHZ0000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=2154202-03.2020.8.26.0000&cdVara=88';
+	window.saj.cpo.urlBaseAcessoRecursoMidiaAudienciaProcessoParaUsuario= '/cposg/autorizarAcessoRecursoAudienciaGravada.do?processoPK.cdProcesso=RI005XYHZ0000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=2154202-03.2020.8.26.0000&cdVara=88';
+	window.saj.cpo.urlBaseAcessoRecursoProcessoComSenha = '/cposg/autorizarAcessoRecursoProcessoPorSenha.do?processoPK.cdProcesso=RI005XYHZ0000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=2154202-03.2020.8.26.0000';
+	window.saj.cpo.abrirAutorizarAcessoRecursoProcessoPorSenha = '/cposg/abrirAutorizarAcessoRecursoProcessoPorSenha.do?processoPK.cdProcesso=RI005XYHZ0000&processoPK.cdForo=990&processoPK.tpOrigemProcesso=2&processoPK.flOrigem=S&processoPK.aliasDaBase=SG5TJ&numeroProcesso=2154202-03.2020.8.26.0000';
+</script><script language="javascript" type="text/JavaScript" src="/cposg/js/acessoRecurso-2.10.2-0.js?n=3062489019"></script><script language="javascript" type="text/JavaScript" src="/cposg/js/acessoProcesso-2.10.2-0.js?n=3127152735"></script><script>
+	(function($){
+		$(function(){
+			var intervalo = 50000;
+			$.saj.manterSessao('/cposg/manterSessao.do', intervalo);
+		});
+				
+	})(jQuery);
+</script><!-- Correção temporária do alinhamento do divisor de seção de formulário do SPW --><script type="text/javascript">
+		$(function(){$('td[background$="spw/fundo_subtitulo2.gif"]').attr('valign', 'top')});
+	</script>
+</head>
+<script language="javascript" type="text/JavaScript">
+	$.saj.getUrlParameter = function getUrlParameter(sParam) {
+		var sPageURL = decodeURIComponent(window.location.search.substring(1)), sURLVariables = sPageURL.split('&'), sParameterName, i;
+		for (i = 0; i < sURLVariables.length; i++) {
+			sParameterName = sURLVariables[i].split('=');
+				if (sParameterName[0] === sParam) {
+					return sParameterName[1] === undefined ? true : sParameterName[1];
+				}
+		}
+	};
+  </script><script type="text/javascript">
+	(function($) {
+		$(function(){
+			var captcha = $.saj.getUrlParameter('uuidCaptcha');
+
+			if (!captcha) {
+				return;
+			}
+
+			var url = $('.processoPrinc').attr('href');
+			$('.processoPrinc').attr('href', url+'&uuidCaptcha='+captcha);
+
+			var $processoPaiApenso = $('.processoPaiApenso');
+            $processoPaiApenso.attr('href', $processoPaiApenso.attr('href') + '&uuidCaptcha=' + captcha);
+
+            var $incidente = $('.incidente');
+            $incidente.attr('href', $incidente.attr('href') + '&uuidCaptcha=' + captcha);
+		})
+	})(jQuery);
+</script><body>
+<input type="hidden" name="cdProcesso" value="RI005XYHZ0000"><!-- HEADER--><div class="unj-entity-header">
+
+	
+
+
+
+
+<div class="unj-entity-header__actions">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 col-md-4">
+                <a href="javascript:history.back();" class="unj-link-back">
+                    <i class="icon-back"></i>
+                </a>
+            </div>
+            <div class="col-13 col-md-12 unj-ta-r">
+                <!-- Pasta digital -->
+                
+                	
+		       		<a class="linkPasta btn btn-secondary btn-space" id="pbVisualizarAutos" title="Pasta Digital" href="#" name="">
+				        Visualizar autos
+	      			</a>
+                
+                <!-- Peticionar -->
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+	
+
+
+
+
+
+
+<div class="unj-entity-header__summary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-13">
+                <!--principal -->
+                
+                    <span class="unj-larger-1 " id="numeroProcesso">
+                        2154202-03.2020.8.26.0000
+                    </span>
+                    
+                    
+                        <span class="unj-tag" id="situacaoProcesso">Arquivado administrativamente</span>
+                    
+                    
+                    
+                
+                <!-- incidente -->
+                
+                
+            </div>
+        </div>
+        <div class="row">
+            
+                <div class="col-md-3">
+                    <span class="unj-label">Classe</span>
+                    <div class="lh-1-1 line-clamp__2" id="classeProcesso"> <span title="Habeas Corpus Criminal">Habeas Corpus Criminal</span>
+</div>
+                </div>
+            
+            
+                <div class="col-md-4">
+                    <span class="unj-label">
+                        Assunto
+                    </span>
+                    <div class="lh-1-1 line-clamp__2" id="assuntoProcesso"><span title="DIREITO PENAL-Crimes contra o Patrimônio">DIREITO PENAL-Crimes contra o Patrimônio</span></div>
+                </div>
+            
+            
+                <div class="col-md-3">
+                    <span class="unj-label">Seção</span>
+                    <div class="lh-1-1 line-clamp__2" id="secaoProcesso"> <span title="Direito Criminal">Direito Criminal</span>
+</div>
+                </div>
+            
+            
+                <div class="col-md-3">
+                    <span class="unj-label">Órgão Julgador</span>
+                    <div class="lh-1-1 line-clamp__2" id="orgaoJulgadorProcesso"> <span title="6ª Câmara de Direito Criminal">6ª Câmara de Direito Criminal</span>
+</div>
+                </div>
+            
+            
+                <div class="col-md-2">
+                    <span class="unj-label">Área</span>
+                    <div class="lh-1-1 line-clamp__2" id="areaProcesso"><span title="Criminal">Criminal</span></div>
+                </div>
+            
+            <!-- Processo principal -->
+            
+        </div>
+    </div>
+</div>
+
+	
+
+
+
+
+
+<div class="unj-entity-header__details">
+    <div class="container">
+        <div class="unj-ta-r">
+            <a href="#maisDetalhes" class="unj-link-collapse" data-toggle="collapse" aria-expanded="false" aria-controls="maisDetalhes">
+                <span class="unj-link-collapse__show">
+                    <i class="unj-link-collapse__icon glyph glyph-chevron-down"></i>
+                    Mais
+                </span>
+                <span class="unj-link-collapse__hide">
+                    <i class="unj-link-collapse__icon glyph glyph-chevron-up"></i>
+                    Recolher
+                </span>
+            </a>
+        </div>
+        <div id="maisDetalhes" class="collapse" aria-expanded="false">
+            <div class="row unj-row--border-top">
+                
+                
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Relator</span>
+                        <div class="line-clamp__2" id="relatorProcesso"><span title="MENS DE MELLO">MENS DE MELLO</span></div>
+                    </div>
+                
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Valor da ação</span>
+                        <div class="line-clamp__2" id="valorAcaoProcesso"><span title="1.000,00">1.000,00</span></div>
+                    </div>
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Outros números</span>
+                        <div class="text-wrap">
+                            
+                            <div>
+                                    003039/2019
+                            </div>
+                        </div>
+                    </div>
+                
+                
+                
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Origem</span>
+                        <div class="line-clamp__2"><span title="Comarca de Presidente Prudente / Presidente Prudente/DEECRIM UR5 / Unidade Regional de Departamento Estadual de Exec">Comarca de Presidente Prudente / Presidente Prudente/DEECRIM UR5 / Unidade Regional de Departamento Estadual de Exec</span></div>
+                    </div>
+                
+                
+                    <div class="col-lg-3 mb-2">
+                        <span class="unj-label">Volume / Apenso</span>
+                        <div class="line-clamp__2" id="volumeApensoProcesso"><span title="1 / 0">1 / 0</span></div>
+                    </div>
+                
+                
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+  
+  <div class="div-conteudo container unj-mb-40">
+  	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+
+
+
+
+    
+
+
+
+<aside class="aside-nav aside-nav--left"><div class="aside-nav__inner">
+        <header class="aside-nav__main-menu__header"><span class="aside-nav__main-menu__header__text">  Menu e-SAJ</span>
+            <a href="#" class="aside-nav__user__close-button close-offcanvas">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/icons/icon-close--light.png" alt=""></a>
+        </header><nav class="aside-nav__main-menu"><ul class="aside-nav__main-menu__list" id="conteudoMenuEsaj"></ul></nav><div id="esaj-beta-switcher-placeholder"></div>
+    </div>
+</aside><aside class="aside-nav aside-nav--right aside-nav__user"><div class="aside-nav__inner">
+        <div class="aside-nav__user__sign">
+            <div class="aside-nav__user__sign__brand">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/aside/brasoes/br-tjsp.jpg" alt="">
+</div>
+            <ul class="aside-nav__user__sign__list">
+<li><span class="aside-nav__user__sign__place">Tribunal de Justiça do Estado de São Paulo</span></li>
+            </ul>
+<a href="#" class="aside-nav__user__close-button close-offcanvas">
+                <img src="https://esaj.tjsp.jus.br/esaj/img/icons/icon-close--dark.png" alt=""></a>
+        </div>
+        <hr>
+<div class="aside-nav__user__info">
+            <h4 class="aside-nav__user__title">Minha conta</h4>
+            <ul class="aside-nav__user__info__list">
+<li class="aside-nav__user__info__list__item"><span class="aside-nav__user__info__name" id="menuNmUsuarioLogado"></span></li>
+                <li class="aside-nav__user__info__list__item"><span class="aside-nav__user__info__oab" id="menuUsuarioOabs">OAB: </span></li>
+            </ul>
+<ul class="aside-nav__user__info__list-access">
+<li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" href="https://esaj.tjsp.jus.br/esaj/cadastro.do">Meu perfil</a></li>
+                
+                    <li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" href="https://esaj.tjsp.jus.br/caixapostal">Caixa Postal</a></li>
+                
+                <li class="aside-nav__user__info__list-access__item"><a class="aside-nav__user__info__list-access__item__link" id="logoutLink" href="#">Sair</a></li>
+            </ul>
+</div>
+    </div>
+</aside><header><link rel="shortcut icon" href="https://esaj.tjsp.jus.br/esaj/tema/padrao/clientes/SP/imagens/favicon.ico" type="image/x-icon">
+<link href="https://esaj.tjsp.jus.br/esaj/app.css" rel="stylesheet" type="text/css">
+<nav class="header__navbar"><a class="header__navbar__menu-hamburger open__aside-nav--left navbar-menu-hamburger__item__link">
+            <span class="menu-hamburger__alert" style="display:none;"></span>
+            <span class="glyph glyph-hamburger"></span>
+        </a>
+
+        <h1 class="header__navbar__title" href="">
+<a class="linkLogo" href="https://esaj.tjsp.jus.br/esaj/redirecionarNovoEsaj.do"><strong>e-SAJ</strong></a> | Consulta de Processos do 2ºGrau</h1>
+
+        <ul class="header__navbar__menu header__navbar__menu--right">
+<li class="header__navbar__menu__item header__navbar__menu__item--initials">
+                <a class="header__navbar__brand__initials" href="http://www.tjsp.jus.br/"> TJSP </a>
+            </li>
+            <li class="header__navbar__menu__item header__navbar__menu__item--user">
+               <span class="header__navbar__name open__aside-nav--right">
+                     <span id="headerNmUsuarioLogado" class="header__navbar__name__text"></span>
+                     <span class="glyph glyph-contact header__navbar__name__icon"></span>
+               </span>
+            </li>
+        </ul></nav></header><div class="offcanvas-backdrop"></div>
+
+
+<script>
+    var dict = {
+        'certificado.tituloCertificadoDigital': 'Certificado digital',
+        'certificado.msgCarregandoCertificado': 'Carregando certificados...',
+        'certificado.msgNenhumCertificadoEncontrado': 'Nenhum certificado encontrado',
+        'certificado.msgErroCarregarCertificado': 'Erro ao carregar certificados',
+        'certificado.msgCertificadoExpirado': '[Expirado]',
+        'certificado.msgCertificadoNaoValido': '[Ainda não válido]',
+        'certificado.msgCertificadoNaoIcpBrasil': '[Não ICP-Brasil]',
+        'certificado.tituloProblemasAoAssinar': 'Falha de comunicação com o dispositivo de assinatura digital',
+
+        'label.contato': 'Contato',
+        'label.identificarSe': 'Identificar-se ',
+
+        'mensagem.aguarde': 'Por favor, aguarde.',
+        'mensagem.paginaNaoCarregada': 'Não foi possível carregar a página.',
+        'mensagem.marcarLido': 'Marcar como lido',
+        'mensagem.registrosSelecionados': 'Registros selecionados',
+        'mensagem.registroJaSelecionado': 'Este registro já está selecionado',
+
+        'mensagem.data.invalida': 'A data digitada é inválida.',
+        'mensagem.data.anoInvalido': 'O ano informado deve ser maior que',
+        'mensagem.data.mesInvalido': 'O mês não pode ser maior que 12.',
+        'mensagem.data.mes': 'O mês',
+        'mensagem.data.mesMaior29dias': 'não pode ter mais que 29 dias.',
+        'mensagem.data.mesMaior28dias': 'não pode ter mais que 28 dias.',
+        'mensagem.data.mesMaior31dias': 'não pode ter mais que 31 dias.',
+        'mensagem.data.mesMaior30dias': 'não pode ter mais que 30 dias.',
+
+        'mensagem.email.invalido': 'O formato do endereço de e-mail não é válido. Verifique se ele tem o formato "usuario@dominio".',
+        'mensagem.email.caracteresInvalidos': 'O endereço de e-mail possui caracteres inválidos',
+        'mensagem.email.usuarioInvalido': 'O formato do usuário informado no endereço de e-mail não é válido.',
+        'mensagem.email.ipInvalido': 'O endereço IP informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioInvalido': 'O formato do domínio informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioIncompleto': 'O domínio informado no endereço de e-mail deve possuir pelo menos duas partes. Por exemplo: "usuario@empresa.com.br".',
+
+        'mensagem.texto.tamanhoInvalido': 'O tamanho do texto digitado é maior do que o tamanho permitido. Tamanho permitido:',
+        'mensagem.texto.caracter': 'O caracter',
+        'mensagem.texto.caracterPosicaoInvalida': 'não está permitido na posição',
+
+        'mensagem.numero.numeroInvalido': 'O valor digitado não é um número válido.',
+        'mensagem.numero.numeroNaoPodeCasasDecimais': 'O número não pode conter casas decimais',
+        'mensagem.numero.numeroCasaDecimaisInvalidas': 'O número de casas decimais é inválido. O número pode conter apenas',
+        'mensagem.numero.casaDecimais': 'casas decimais',
+        'mensagem.numero.numeroInteiroInvalido': 'O número de dígitos inteiros é inválido. O número pode conter apenas',
+        'mensagem.numero.digitosInteiros': 'dígitos inteiros',
+        'mensagem.numero.numeroTamanhoInvalido': 'O número digitado não pode ser maior que',
+        'mensagem.numero.numeroZeroInvalido': 'O número digitado deve ser diferente de zero.'
+    }
+</script><script>
+    var appEsajLayout = appEsajLayout || {};
+    appEsajLayout.urlNovoMenuHtml = 'https://esaj.tjsp.jus.br/esaj/menuPortalV2Html.do?servico=190201';
+
+    var appEsajCas = appEsajCas || {};
+    appEsajCas.urlServicoConteudoIdentificacao = 'https://esaj.tjsp.jus.br/sajcas/conteudoIdentificacaoJson?script=1645340444524&retorno=' + encodeURIComponent(location.href);
+</script><script src="https://esaj.tjsp.jus.br/esaj/js/portalV2-bundle.js?n=806192629"></script><script src="https://esaj.tjsp.jus.br/sajcas/seletorVersaoBeta.js?n=4a270623-3553-4d8c-93a3-61980a8e2292&amp;versao=2"></script><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Apensos / Vinculados</h2>
+		
+	
+</div>
+	<!--  Tabela de (apensos) -->
+	<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1"><tr>
+<td colspan="3" align="left" id="dadosApensosNaoDisponiveis">Não há processos apensos ou vinculados para este processo.</td>
+				</tr></table>
+<!-- Tabela de (apensos) --><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Números de 1ª Instância</h2>
+		
+	
+</div>
+
+
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="label">
+<td align="left" valign="top" width="200">Nº de 1ª instância</td>
+		<td align="left" valign="top" width="250">Foro</td>
+		<td align="left" valign="top" width="200">Vara</td>
+		<td align="left" valign="top" width="250">Juiz</td>
+		<td align="left" valign="top" width="*">Obs.</td>
+	  </tr>
+<tr class="fundoEscuro" height="2">
+<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+</table>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1"><tr class="fundoClaro">
+<td align="left" valign="top" width="200">
+			
+				
+				
+					0018661-74.2018.8.26.0041
+				
+			
+	    </td>
+		<td align="left" valign="top" width="250">
+	      Presidente Prudente/DEECRIM UR5
+	    </td>
+		<td align="left" valign="top" width="200">
+	      Unidade Regional de Departamento Estadual de Exec
+	    </td>
+	    <td align="left" valign="top" width="250">
+	      -
+		</td>
+		<td align="left" valign="top">
+	      -
+		</td>
+	  </tr></table>
+<div style="padding-top: 10px;">
+	
+	
+
+	
+		
+		
+			<h2 class="subtitle">Partes do Processo</h2>
+		
+	
+</div>
+
+<!--  cabecalho da tabela de lista (partes) -->
+
+
+<!--  dados da lista partes principais (partes) -->
+<table id="tablePartesPrincipais" style="margin-left:15px; margin-top:1px;" align="center" border="0" cellpadding="0" cellspacing="0" width="98%">
+<tr class="fundoClaro poloAtivo">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+      <span class="mensagemExibindo tipoDeParticipacao">Paciente: </span>
+    </td>
+    <td width="*" align="left" style="padding-bottom: 5px" class="nomeParteEAdvogado">
+	  
+		  
+			  
+			  
+				  Antonio Carlos da Silva
+			  
+		  
+	     
+      
+ 	  
+	  
+   	 	 <br><span class="mensagemExibindo">Advogado:&amp;nbsp</span>
+		  
+			  
+			  
+				  Idiel Mackievicz Vieira
+			  
+		  
+		  <input type="hidden" value="121018SP"> 
+   	 	 
+      
+      
+  	 </td>
+</tr>
+<tr class="fundoClaro poloAtivo">
+<td valign="top" width="141" style="padding-bottom: 5px" class="label">
+      <span class="mensagemExibindo tipoDeParticipacao">Impetrante: </span>
+    </td>
+    <td width="*" align="left" style="padding-bottom: 5px" class="nomeParteEAdvogado">
+	  
+		  
+			  
+			  
+				  Idiel Macievicz Vieira
+			  
+		  
+	     
+      
+ 	  
+	  
+      
+  	 </td>
+</tr>
+</table>
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+		
+		
+	
+
+	
+		
+		
+			<h2 class="subtitle">Movimentações</h2>
+		
+	
+</div>
+
+ 
+	
+
+<table style="margin-left:15px; margin-top:1px;" align="center" border="0" cellpadding="0" cellspacing="0" width="98%">
+<thead>
+<tr>
+<th width="120" class="label" style="vertical-align: bottom">Data</th>
+				  <th valign="middle" width="20" aria-hidden="true"> </th>
+				  <th valign="middle" class="label">Movimento</th>
+				</tr>
+<tr class="fundoEscuro" height="2" aria-hidden="true">
+<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+</thead>
+<tbody id="tabelaUltimasMovimentacoes">
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        25/09/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=40" name="M" cddocumento="40">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=40" name="M" cddocumento="40">
+                    Processo encaminhado para o Arquivo
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Certifico que o v. acórdão transitou em julgado.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        22/09/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Prazo
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        25/08/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Ciência Antecipada Intimação Eletrônica
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        24/08/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=37" name="M" cddocumento="37">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=37" name="M" cddocumento="37">
+                    Expedido Certidão
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Certidão de Remessa da Intimação para o Portal Eletrônico</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        24/08/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Ciência de acórdão - Prazo - 5 dias
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Exmo(a) Senhor(a), Fica aberta vista à Douta Procuradoria Geral de Justiça para ciência do v. acórdão , ficando ciente de que a íntegra dos autos do processo eletrônico encontra-se disponível no endereço http://esaj.tjsp.jus.br.<br><b>Vencimento: </b>08/09/2020</span>
+
+        
+    </td>
+</tr>
+</tbody>
+<tbody style="display: none;" id="tabelaTodasMovimentacoes">
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        25/09/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=40" name="M" cddocumento="40">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=40" name="M" cddocumento="40">
+                    Processo encaminhado para o Arquivo
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Certifico que o v. acórdão transitou em julgado.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        22/09/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Prazo
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        25/08/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Ciência Antecipada Intimação Eletrônica
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        24/08/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=37" name="M" cddocumento="37">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=37" name="M" cddocumento="37">
+                    Expedido Certidão
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Certidão de Remessa da Intimação para o Portal Eletrônico</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        24/08/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Ciência de acórdão - Prazo - 5 dias
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Exmo(a) Senhor(a), Fica aberta vista à Douta Procuradoria Geral de Justiça para ciência do v. acórdão , ficando ciente de que a íntegra dos autos do processo eletrônico encontra-se disponível no endereço http://esaj.tjsp.jus.br.<br><b>Vencimento: </b>08/09/2020</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        20/08/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 19/08/2020
+Tipo de publicação: Intimação de Acórdão
+Número do Diário Eletrônico: 3109</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        19/08/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=35" name="M" cddocumento="35">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=35" name="M" cddocumento="35">
+                    Expedido Certidão
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Certidão de Publicação de Acórdão [Digital]</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        12/08/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Acórdão registrado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Acórdão registrado sob nº 20200000633266, com 16 folhas.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        12/08/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Processo encaminhado para o Processamento de Grupos e Câmaras para Intimação do Acórdão - Julgamento Virtual
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        12/08/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=31" name="M" cddocumento="31">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=31" name="M" cddocumento="31">
+                    Julgado virtualmente
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">JULGARAM improcedente a presente ação de habeas corpus e DENEGARAM A ORDEM, ratificando a liminar. V.U.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        03/08/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Julgamento Virtual Iniciado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        29/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Conclusos para o Relator
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Termo de conclusão - Relator (automático)</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        29/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Petição Intermediária Juntada
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Nº Protocolo: WPRO.20.00816355-3
+Tipo da Petição: Parecer da PGJ
+Data: 29/07/2020 15:37
+</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        29/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Expedido Termo
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Termo de Juntada - Automática</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        20/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Pedido de Informações Juntado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        20/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Pedido de Informações Juntado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        20/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 17/07/2020
+Tipo de publicação: Despacho
+Número do Diário Eletrônico: 3086</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        17/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Processo encaminhado para o MP - Parecer
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">PGJ - Vista para Parecer [Digital]</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        17/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Mensagem Eletrônica (e-mail) Juntada
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        17/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=22" name="M" cddocumento="22">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=22" name="M" cddocumento="22">
+                    Expedido Ofício
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Comunicada Liminar Indeferida - HC - [Digital] - HC e MS</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        17/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=21" name="M" cddocumento="21">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=21" name="M" cddocumento="21">
+                    Expedido Certidão
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Certidão de Publicação de Despacho [Digital]</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        16/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Processo encaminhado para o Proc. Recursos de H.C. e M.S.
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        16/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=18" name="M" cddocumento="18">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=18" name="M" cddocumento="18">
+                    Despacho
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">VISTOS. O impetrante ajuizou o presente pedido de habeas corpus alegando constrangimento ilegal em virtude da demora para realização do exame criminológico do paciente para fins de aferição do requisito subjetivo para que seja possível a progressão dele ao regime semiaberto. Insurge-se ainda a defesa contra a decisão que indeferiu o pedido de conversão da prisão do paciente em prisão domiciliar em virtude da pandemia. As informações foram prestadas (folhas 53). Primeiramente, destaco que, em que pese a importância do presente remédio constitucional para a salvaguarda das liberdades individuais, não pode ele ser utilizado como sucedâneo recursal, sob pena de ser banalizado. É este o entendimento esposado pelo Egrégio Superior Tribunal de Justiça: "O Superior Tribunal de Justiça, alinhando-se à nova jurisprudência da Colenda Corte, passou também a restringir as hipóteses de cabimento do habeas corpus, não admitindo que o remédio constitucional seja utilizado em substituição do recurso cabível" . Ademais, como já salientado, a presente ação constitucional não se presta a esta situação específica, qual seja, alterar regime de pena ou conceder benefício. Tal análise vai ao encontro do entendimento pretoriano: "Este Sodalício orienta que, aos condenados por tráfico de entorpecentes, cuja a reprimenda final restou estabelecida em menos de quatro anos, mesmo assim, tendo em conta a natureza e a quantidade da droga, não há como alterar o regime prisional, fixado de maneira mais gravosa, ao menos através da via mandamental" . "Esta Corte e o Supremo Tribunal Federal têm refinado o cabimento do habeas corpus, restabelecendo o seu alcance aos casos em que demonstrada a necessidade de tutela imediata à liberdade de locomoção, de forma a não ficar malferida ou desvirtuada a lógica do sistema recursal vigente. Assim, verificada hipótese de dedução de habeas corpus em lugar do recurso próprio, impõe-se o não conhecimento da impetração, cumprindo-se ressaltar que uma vez constatada a existência de ilegalidade flagrante, nada impede que esta Corte defira ordem de ofício, como forma de desconstituir o constrangimento ilegal. É certo que o art. 112 da Lei de Execução Penal, com a redação introduzida pela Lei nº 10.792/2003, passou a estabelecer, para a concessão da progressão de regime ou do livramento condicional, o preenchimento cumulativo dos requisitos objetivo (lapso temporal) e subjetivo (bom comportamento carcerário), nada explicitando acerca da necessidade de exame criminológico. Entretanto, conforme entendimento consolidado nesta Corte de Justiça, o Juízo de primeiro grau e o Tribunal de origem podem determinar, excepcionalmente, a realização de exame criminológico, diante das peculiaridades da causa, desde que o façam em decisão concretamente fundamentada (Súmula nº 439 desta Corte). Noutro giro, consoante jurisprudência do Superior Tribunal de Justiça, uma vez realizado o exame psicossocial ou criminológico do apenado, como aqui terminou ocorrendo, nada impede que o magistrado se valha dos elementos ali constantes para formar a sua convicção. No caso, ao contrário do afirmado pelos impetrantes, as instâncias ordinárias indeferiram o benefício da progressão de regime à paciente com amparo em dados concretos, colhidos de pareceres técnicos exarados por psicólogos e assistentes sociais. Com efeito, as referências à gravidade do delito e à longa pena a cumprir foram feitas a título de obiter dictum. Outrossim, não há como, nessa via estreita do habeas corpus, avaliar o requisito subjetivo exigido para fins de benefícios da execução, mormente se o Juízo de primeiro grau, mais próximo à realidade dos fatos, concluiu, com base nos elementos de convicção produzidos, que a reeducanda ainda não está apta a retornar ao convívio em sociedade. Ordem não conhecida" . Como visto, a via eleita não comporta a possibilidade de reexame do conjunto fático probatório para a concessão do benefício por esta Corte. Quanto à crise decorrente do coronavírus Covid-19, observa-se a impetração de inúmeros habeas corpus apenas com este fundamento. Porém, tal crise não afasta a obrigação dos impetrantes em demonstrar a ocorrência de constrangimento ilegal, que ofende o direito de ir e vir, não bastando alegações genéricas, sem qualquer lastro fático. Neste sentido, o Código de Ética da Advocacia, afirma que o advogado, quer particular, quer público, deve desaconselhar lides temerárias, sendo-lhe vedado expor fatos os falseando ou usando de má-fé. A simples alegação de que em face da pandemia o paciente corre risco de contágio e, portanto, deve ser solto, aparenta uma lide, no mínimo, temerária. Ora, todos estão sujeitos à pandemia, estejam ou não presos, fato notório e que, portanto, dispensa prova. Assim esta alegação, por si só, não acarreta a obrigação de liberação. E isso porque se todos correm risco, soltos ou presos, fica claro que o risco por si só não justifica a liberação. Neste sentido, em recente decisão monocrática o i. Des. Alberto Anderson, deste e. Tribunal, comentando a horizontalidade do risco de contágio além de independer de prova nos autos por ser notório, vem sendo destacado exacerbadamente em todos os tipos de mídia, sendo assunto de conversa e debates públicos entre vários especialistas esclareceu que Príncipes, como os de Mônaco e da Inglaterra; políticos de vários países; pessoas com alto poder aquisitivo e mesmo aqueles que lançando mão de todos os equipamentos de segurança e regras de proteção como aqueles os profissionais da saúde que combatem a pandemia chegaram a ser contaminados. Como destacou, todos os habitantes do planeta correm risco efetivo de serem contaminados. Logo, estando presos ou soltos, o risco existe, indicando que a pandemia não autoriza ou mesmo indica que ao serem soltos os presos não serão contaminados. Também digno de nota o habeas corpus n.º 2053753-37.2020.8.26.0000, das Defensorias Públicas do Estado e da União, para que todas as pessoas presas e aquelas que vierem a ser presas, os que se encontram em regime semiaberto e aqueles condenados por crimes sem violência ou ameaça ou seja, cumprindo em regime fechado sejam liberadas. Indicam como autoridade coatora este Tribunal e todos os juízes criminais e de execução criminal. Inúmeras incongruências na presente impetração. Como bem expôs o i. Des. Guilherme G. Strenger, d. Presidente da Seção de Direito Criminal deste Tribunal, não ficou definido quem seriam as autoridades coatoras para indicação da competência. Ademais, sendo este Tribunal uma das autoridades coatoras, não poderia ele próprio ser o órgão que vai apreciar eventual nulidade, o que configura erro técnico patente. Também indica o i. Des. Guilherme G. Strenger que a Recomendação n.º 62/2020, do c. Conselho Nacional de Justiça, não afasta nem retira a competência jurisdicional dos magistrados para avaliação do caso concreto, não gerando qualquer direito líquido e certo para quem quer que seja. A inicial não indica quem seriam os pacientes, quais as especificidades e quais são as circunstâncias do caso concreto que os colocaria no grupo de risco, nem tampouco a existência concreta decorrente da existência de pessoa contaminada a justificar a liberação. No mesmo sentido o indeferimento do habeas corpus coletivo pelo i. Min. Antônio Saldanha Palheiro, onde a Defensoria Pública da União deixava nas entrelinhas que todos os presos deveriam ser soltos, visto que a pandemia "tem o potencial de atingir praticamente todos os presos do país". Na Comissão de Direitos Humanos da ONU, a alta comissária Michelle Bachelet orientou outros países a "examinarem maneiras de libertar aqueles particularmente vulneráveis à covid-19, entre os detidos mais velhos e doentes, assim como os infratores de baixo risco. Reforçando esse critério mais restritivo, merece destaque estudo conduzido por Keith Ditcham, pesquisador especializado na análise da polícia e da criminalidade organizada do Britain's Royal United Services Institute, segundo o qual cenários como os do Brasil, da Colômbia, da Venezuela e do Egito serão mais difíceis de administrar se um número considerável de prisioneiros for libertado". Como visto impetrações genéricas sem lastro em parâmetros factíveis não justificam a liberação indiscriminada de presos. Por tais motivos, alegação de que corre risco de ser contaminado não implica em qualquer constrangimento, uma vez que, infelizmente, todos nós estamos sob risco de contaminação. Ademais, a soltura não necessariamente diminui o risco, já que tal não é inerente ao sistema carcerário. Pelo contrário, em um microssistema onde a visita externa está suspensa e não há caso confirmado no estabelecimento em que se encontra o paciente, estatisticamente a chance de se contrair o vírus é menor que no caso do sujeito solto a circular livremente pelas ruas, tanto é que as medidas tomadas são exatamente de restrição a sair de casa. Em poucas palavras, não foram revogados os dispositivos legais que autorizam a prisão, quer definitiva, quer processual, quando presentes os seus requisitos, apenas pelo risco de contaminação. A Recomendação n.º 62 do Conselho Nacional de Justiça, ao fazer expressa referência à competência do CNJ, prevista no artigo 103-B, §4º, da Constituição Federal, reafirma que seu papel não se confunde com determinação ou controle dos atos jurisdicionais, como constou de seu artigo 1º. Tanto assim, que em entrevista dada em 05 de abril p.p., o Ministro Fux, explicitou que se trata de recomendação e não determinação. Fica patente que os casos devem ser analisados individualmente, em face das circunstâncias concretas que apresentem. Desta forma, no tocante à concessão de prisão domiciliar em razão de doença grave, exige-se, inicialmente, que o paciente esteja no regime aberto. Tal exigência decorre do artigo 117 da Lei de Execução Penal. Aliás, não basta simplesmente que o paciente esteja no regime aberto e possua doença grave, deve a doença estar em face que acarrete debilidade extrema e que não possa ser tratada no local. Guilherme de Souza Nucci ensina que "não se trata de ser enfermo, mesmo gravemente; a lei é enfática ao demandar debilidade extrema em função dessa doença. Por isso, cabe a avaliação judicial para cada caso, sem que se possa automatizar a concessão da prisão domiciliar. Ilustrando, o portador do vírus da AIDS, mesmo com manifestações de enfermidades oportunistas, não faz jus à prisão em domicílio, salvo se estiver em situação de limite, debilitado a ponto de não representar qualquer perigo à sociedade". No mesmo sentido a jurisprudência do Superior Tribunal de Justiça. "HABEAS CORPUS. SUBSTITUIÇÃO AO RECURSO ORDINÁRIO. IMPOSSIBILIDADE. TENTATIVA DE HOMICÍDIO QUALIFICADO CONTRA POLICIAIS MILITARES NO EXERCÍCIO DE SUA FUNÇÃO. PRISÃO EM FLAGRANTE CONVERTIDA EM CUSTÓDIA PREVENTIVA. PRETENDIDA SUBSTITUIÇÃO POR RECOLHIMENTO DOMICILIAR. ART. 318, INCISO II, DO CPP. EXTREMA DEBILIDADE NO ESTADO DE SAÚDE DO RÉU E IMPOSSIBILIDADE DE RECEBER TRATAMENTO MÉDICO NO ESTABELECIMENTO PRISIONAL. FALTA DE COMPROVAÇÃO. COAÇÃO ILEGAL NÃO DEMONSTRADA. WRIT NÃO CONHECIDO. [...] Não comprovada a extrema debilidade do recluso ou a gravidade da doença e, asseguradas todas as garantias para que sejam atendidas suas necessidades de saúde dentro do estabelecimento prisional, inviável o deferimento da prisão domiciliar, especialmente em se considerando a gravidade dos delitos pelos quais já foi, inclusive, pronunciado. [-] Habeas corpus não conhecido". (STJ - HC 389.009/TO, Rel. Ministro JORGE MUSSI, QUINTA TURMA, julgado em 13/06/2017, DJe 22/06/2017) Como ressaltou o i. Des. Luiz Otávio de Oliveira Rocha, também deste Tribunal: "É dizer, se nem mesmo à pessoa que já está acometida de doença grave cabe reconhecer direito automático ao cumprimento da pena em domicílio, parece que, mesmo diante do conteúdo da Recomendação nº 62/2020, é dever dos magistrados brasileiros aferir em cada situação a conveniência de concessão do direito à "prisão domiciliar" (que "prisão não é", como ressaltou o i. Ministro do STF Marco Aurélio de Mello em 14 de novembro de 2013, quando se discutia em plenário o regime de cumprimento das penas dos condenados na Ação Penal 470), segundo a verificação de tratar-se o interessado de pessoa presa "em estabelecimentos penais com ocupação superior à capacidade, que não disponham de equipe de saúde lotada no estabelecimento, sob ordem de interdição, com medidas cautelares determinadas por órgão de sistema de Poder Judiciário Conselho Nacional de Justiça jurisdição internacional, ou que disponham de instalações que favoreçam a propagação do novo coronavírus", como, aliás, estabelece o seu artigo 5º, inciso I, letra b. E é natural que seja assim. Afinal, o i. Min. SEBASTIÃO REIS JÚNIOR, do C. Superior Tribunal de Justiça, ao proferir, decisão monocrática no HC nº 568.693/ES (no qual figura como impetrante/requerente a Defensoria Pública do Estado do Espírito Santo), observou que, "conforme asseverado pela requerente, o quadro fático apresentado pelo Espírito Santo é idêntico ao dos demais Estados brasileiros: o risco de contágio pela pandemia do coronavírus (Covid-19) é semelhante em todo o país, assim como o é o quadro de superlotação e de insalubridade dos presídios brasileiros". Com efeito, a Lei de Execução Penal estabelece o direito à assistência à saúde, incluído, se necessário, atendimento médico (no próprio estabelecimento e, se o caso, em local diverso), como se verifica dos seguintes dispositivos: "Art. 14. A assistência à saúde do preso e do internado de caráter preventivo e curativo, compreenderá atendimento médico, farmacêutico e odontológico. '§ 1º (Vetado). '§ 2º Quando o estabelecimento penal não estiver aparelhado para prover a assistência médica necessária, esta será prestada em outro local, mediante autorização da direção do estabelecimento. '§ 3º Será assegurado acompanhamento médico à mulher, principalmente no pré-natal e no pós-parto, extensivo ao recém-nascido. (Incluído pela Lei nº 11.942, de 2009) '(...) 'Art. 40. Impõe-se a todas as autoridades o respeito à integridade física e moral dos condenados e dos presos provisórios. '(...) 'Art. 43. É garantida a liberdade de contratar médico de confiança pessoal do internado ou do submetido a tratamento ambulatorial, por seus familiares ou dependentes, a fim de orientar e acompanhar o tratamento. 'Parágrafo único. As divergências entre o médico oficial e o particular serão resolvidas pelo Juiz da execução. '(...) 'Art. 120. Os condenados que cumprem pena em regime fechado ou semi-aberto e os presos provisórios poderão obter permissão para sair do estabelecimento, mediante escolta, quando ocorrer um dos seguintes fatos: 'I - falecimento ou doença grave do cônjuge, companheira, ascendente, descendente ou irmão; 'II - necessidade de tratamento médico (parágrafo único do artigo 14)." Desse modo, apenas diante do risco que, repita-se, é horizontal de que possam contrair o Covid-19, parece prematuro concluir sobre se a soltura dos condenados pela prática de crime é conveniente para eles próprios e para os demais membros da coletividade, sem que se deva constatar, a priori, a impossibilidade da tomada de outras medidas de prevenção contra o contágio pelas autoridades incumbidas da administração dos estabelecimentos prisionais. E isso, levando-se em conta que a superlotação desses estabelecimentos no país, embora constitua problema real e bem conhecido, não afeta de modo uniforme todos os estabelecimentos, em todos os Estados, em muitos deles havendo enfermaria para atendimento de casos não graves e espaço suficiente a permitir o convívio em níveis de distanciamento não muito diversos daqueles a que estão sujeitos os habitantes das grandes cidades, hoje segregados por recomendação dos governos e entidades responsáveis pela saúde pública. De fato, em que pese ser inegável o problema de superlotação acima referido, impende considerar outro dado não menos relevante sobre a realidade sócio-econômica do Brasil, que não pode ser simplesmente ignorado na abordagem da questão das pessoas que se encontram presas. Qualquer um que consulte os dados oficiais do  (IBGE) resultantes do trabalho de coleta do Censo de 2010, encontrará que naquele ano foi constatado que cerca de 11,4 milhões de pessoas (6% da população do país) viviam em aglomerados subnormais. Com o censo, o identificou a existência de 6.329 favelas no Brasil, distribuídas em 323 dos 5.565 municípios brasileiros. O conceito de aglomerado subnormal (que o IBGE passou a utilizar em 2010 em substituição a "Zonas Especiais de Interesse Social") compreende todo e qualquer conjunto constituído por no mínimo 51 unidades habitacionais (barracos, casas etc.) em terrenos de propriedade alheia (pública ou particular), disposto de forma densa e desordenada, tendo como característica comum a carência de serviços públicos, inclusive os essenciais. Ora, todo brasileiro com conhecimento mínimo da realidade nacional sabe como são diminutas e precárias as moradias das favelas (ou "comunidades"). Sabe, também, que esse contingente de mais de onze milhões de brasileiros (mais de dezes vezes superior ao total de indivíduos presos em estabelecimentos penitenciários em todo o país) não se encontra em condições de observar com rigor as recomendações das entidades de saúde pública sobre isolamento e restrição de contatos sociais. Não é sem razão, aliás, que o governo federal editou, igualmente em 1º de abril, a Portaria (conjunta) nº 54, visando "Aprovar recomendações gerais aos gestores e trabalhadores do Sistema Único de Assistência Social (SUAS) dos Estados, Municípios e do Distrito Federal com o objetivo de garantir a continuidade da oferta de serviços e atividades essenciais da Assistência Social" (art. 1º), considerando "a disseminação do novo coronavírus (COVID-19) e sua classificação mundial como pandemia e... a importância de o Estado brasileiro garantir a oferta regular de serviços e programas socioassistenciais voltados à população mais vulnerável e em risco social e promover a integração necessária entre o Sistema Único de Assistência Social e o Sistema Único de Saúde". Daí que, mesmo desprezando-se todos os óbices legais já mencionados, mas levando-se em conta que as autoridades públicas têm recomendado aos cidadãos que se mantenham resguardados em suas casas e procurem atendimento especializado somente quando presentes alguns dos sintomas da enfermidade causada pelo Covid-, parece prematuro estimar como positivo o impacto na disseminação da doença que decorreria da concessão sistemática a presos condenados do benefício da "prisão domiciliar". Afinal, se os índices de reincidência criminal no país se aproximam dos 70%, como alguns ii. Presidentes do Conselho Nacional de Justiça têm destacado nos últimos anos, é indispensável obtemperar que a soltura indiscriminada de presos assintomáticos, que se encontram em presídios onde há enfermarias e possibilidade de isolamento daqueles que apresentem sintomas iniciais de gripe, poderia implicar em agravamento do gravíssimo problema da segurança pública no país, que há anos figura no grupo dos países com os maiores índices de criminalidade do planeta. E ao argumento de que a questão da segurança pública não é prioritária, senão a questão humanitária, haveria que responder-se, então, que a recomendação adequada seria no sentido da soltura de todos os presos, inclusive aqueles que cumprem penas longas por crimes graves e gravíssimos, cujo risco de contágio obviamente não é diverso do que afeta os demais. Daí que, sem descuidar da Recomendação nº 62/2020, emitida pelo C. Conselho Nacional de Justiça, ante a ausência de demonstração pelo paciente de que se enquadra em grupo de risco ("pessoas acima dos 60 anos e aquelas com doenças crônicas, como diabetes e doenças cardiovasculares", segundo informação oficial), ou que padece de especial condição de vulnerabilidade no presídio em que se encontra, não cabe reconhecer a seu favor a existência de cerceamento ilegal de seu direito de locomoção passível de ser sanado via deste Habeas Corpus. Neste ponto, importante mencionar que não houve relato de nenhum detento diagnosticado com COVID-19 na unidade prisional em que se encontra detido o paciente". Quanto aos presos processuais, mesmo que o crime não tenha sido praticado durante a quarentena, a situação é semelhante. Não basta o risco de contaminação, que como exposto, afeta a 'todos. Para a liberação necessária a ponderação entre o risco concreto à vida do paciente aprisionado processualmente o que implica vários fatores, fatores estes que devem ser demonstrados de forma clara na inicial e devidamente acompanhados desde já pelos documentos a comprovar o alegado, tais como fazer parte do grupo de risco, existência de contaminados, ausência de meios de tratamento no local, inexistência de isolamento de eventuais infectados etc. juntamente com o risco para a sociedade que também demanda vários pontos, tais como a gravidade do crime praticado, o prognóstico de reincidência etc. No caso dos autos tais fatos não se viram presentes. Observa-se que o i. Des. Ricardo Mair Anafe, Corregedor Geral de Justiça, implementou normas para o combate da propagação do vírus nos presídios, como a proibição de saídas temporárias uma vez que inexistindo pessoa contaminada no interior do presídio, a contaminação só poderia ocorrer vindo de fora, sendo certo que o Secretário de Administração Penitenciária do Estado também vem atuando, isolando eventuais infectados. A Recomendação n.º 62 do Conselho Nacional de Justiça, no seu artigo 4º, deixa patente que não há que se falar em liberação de presos provisórios "por atacado", nem tampouco indica a suspensão dos dispositivos que autorizam a prisão preventiva. Inexistindo qualquer documentação comprobatória de eventual doença grave, de forma que não preenche todos os requisitos para a liberação. Ademais, o paciente sequer compõe o grupo de risco alvo da pandemia, visto que tem 55 anos de idade. Ademais, ainda que o paciente possuísse idade superior à 60 anos ou doença grave, estando dentre aquele sujeitos mais vulneráveis mencionados no artigo 1°, parágrafo único, inciso I da Recomendação 62/2020 do Conselho Nacional de Justiça, é certo que os presos recolhidos aos estabelecimentos prisionais do estado de São Paulo, além do isolamento característico da segregação condição atualmente exigida da maioria dos cidadãos paulistas , também foram protegidos por medidas administrativas e judiciais, dentre elas a suspensão de visitas. Aliás, sequer se cogitou a presença de pessoa infectada com o mencionado vírus no estabelecimento no qual se encontra a paciente, nem tampouco comprovação de falta de suporte médico no estabelecimento prisional. Portanto, inexiste periculum in mora que justifique a concessão do pedido. Por fim, tem-se que a dispensa de exames criminológicos para fins de progressão de regime foi apenas uma recomendação do Ilustre Ministro Marco Aurélio do Supremo Tribunal Federal em decisão proferida recentemente, de sorte que tal entendimento sequer foi unanimemente firmado pela Corte, tampouco foi objeto de jurisprudência. Conforme as informações prestadas pela autoridade coatora, em 10 de julho de 2020, a mesma reiterou a ordem para que a unidade prisional produza o exame criminológico, estendendo o prazo por mais 30 dias. Justificou a autoridade coatora que o exame é totalmente necessário para aferição do requisito subjetivo uma vez que o paciente foi condenado pelo crime de extorsão no qual, fazendo-se passar por policial civil, exigiu a entrega de expressiva quantia em dinheiro da vítima um milhão de reais. Mencionou ainda que a exigência foi feita com distintivo e arma de fogo. Ademais, a decisão ainda mencionou que o paciente já fora condenado antes pela prática do crime de uso de documento falso com o fim, aparentemente, de se eximir de responsabilidade criminal. Sendo assim, entendo como realmente necessária a realização de exame criminológico para aferir se o paciente assimilou a terapêutica penal e se de fato está apto a progressão de regime. Por fim, quanto ao excesso de prazo, destaca-se que o magistrado de primeiro grau, em suas informações, relatou que passado in albis o prazo para a realização do exame criminológico, cobrou a realização dele, determinando a justificação do não cumprimento dos prazos. Logo, não há que se falar em desídia jurisdicional para a configuração da má-fé, máxime as dificuldades trazidas pela pandemia. Não sendo caso, portanto, de concessão da liminar. Ante o exposto, NEGO A LIMINAR. Porém determino que seja entregue por oficial de justiça ao responsável pela realização do exame criminológico, cópia do ofício do magistrado de primeiro grau, cientificando-o que se trata de ordem. Logo, não cumprimento não realização do exame no prazo ou não justificativa plausível e demonstrada irá gerar responsabilidade penal e administrativa, servido o presente para que não se alega falta de dolo no crime de desobediêncial. Encaminhem-se os autos para a Douta Procuradoria Geral de Justiça para oferta de parecer. Após, tornem conclusos.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        13/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 10/07/2020
+Tipo de publicação: Despacho
+Número do Diário Eletrônico: 3081</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        10/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=17" name="M" cddocumento="17">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=17" name="M" cddocumento="17">
+                    Expedido Certidão
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Certidão de Publicação de Despacho [Digital]</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        10/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Conclusos para o Relator
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Termo de conclusão - Relator (automático)</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        10/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Pedido de Informações Juntado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        10/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Pedido de Informações Juntado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        10/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 09/07/2020
+Tipo de publicação: Distribuídos
+Número do Diário Eletrônico: 3080</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        09/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=12" name="M" cddocumento="12">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=12" name="M" cddocumento="12">
+                    Expedido Ofício
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Solicitadas Informações (Liminar Apreciada Após Informações) - [Digital] - HC e MS</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        09/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Processo encaminhado para o Proc. Recursos de H.C. e M.S.
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        09/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Publicado em
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Disponibilizado em 08/07/2020
+Tipo de publicação: Entrados
+Número do Diário Eletrônico: 3079</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        08/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Processo encaminhado para o Processamento de Grupos e Câmaras
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        08/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+            <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=8" name="M" cddocumento="8">
+                <img src="/cposg/imagens/doc2.gif" width="16" height="16" border="0"></a>
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+                <a class="linkMovVincProc" title="Visualizar documento em inteiro teor" href="#?cdDocumento=8" name="M" cddocumento="8">
+                    Despacho
+                </a>
+            
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">VISTOS. O impetrante ajuizou o presente pedido de habeas corpus alegando constrangimento ilegal em virtude da demora para realização do exame criminológico do paciente para fins de aferição do requisito subjetivo para que seja possível a progressão dele ao regime semiaberto. Insurge-se ainda a defesa contra a decisão que indeferiu o pedido de conversão da prisão do paciente em prisão domiciliar em virtude da pandemia. Primeiramente, destaco que, em que pese a importância do presente remédio constitucional para a salvaguarda das liberdades individuais, não pode ele ser utilizado como sucedâneo recursal, sob pena de ser banalizado. É este o entendimento esposado pelo Egrégio Superior Tribunal de Justiça: "O Superior Tribunal de Justiça, alinhando-se à nova jurisprudência da Colenda Corte, passou também a restringir as hipóteses de cabimento do habeas corpus, não admitindo que o remédio constitucional seja utilizado em substituição do recurso cabível" . Ademais, como já salientado, a presente ação constitucional não se presta a esta situação específica, qual seja, alterar regime de pena ou conceder benefício. Tal análise vai ao encontro do entendimento pretoriano: "Este Sodalício orienta que, aos condenados por tráfico de entorpecentes, cuja a reprimenda final restou estabelecida em menos de quatro anos, mesmo assim, tendo em conta a natureza e a quantidade da droga, não há como alterar o regime prisional, fixado de maneira mais gravosa, ao menos através da via mandamental" . "Esta Corte e o Supremo Tribunal Federal têm refinado o cabimento do habeas corpus, restabelecendo o seu alcance aos casos em que demonstrada a necessidade de tutela imediata à liberdade de locomoção, de forma a não ficar malferida ou desvirtuada a lógica do sistema recursal vigente. Assim, verificada hipótese de dedução de habeas corpus em lugar do recurso próprio, impõe-se o não conhecimento da impetração, cumprindo-se ressaltar que uma vez constatada a existência de ilegalidade flagrante, nada impede que esta Corte defira ordem de ofício, como forma de desconstituir o constrangimento ilegal. É certo que o art. 112 da Lei de Execução Penal, com a redação introduzida pela Lei nº 10.792/2003, passou a estabelecer, para a concessão da progressão de regime ou do livramento condicional, o preenchimento cumulativo dos requisitos objetivo (lapso temporal) e subjetivo (bom comportamento carcerário), nada explicitando acerca da necessidade de exame criminológico. Entretanto, conforme entendimento consolidado nesta Corte de Justiça, o Juízo de primeiro grau e o Tribunal de origem podem determinar, excepcionalmente, a realização de exame criminológico, diante das peculiaridades da causa, desde que o façam em decisão concretamente fundamentada (Súmula nº 439 desta Corte). Noutro giro, consoante jurisprudência do Superior Tribunal de Justiça, uma vez realizado o exame psicossocial ou criminológico do apenado, como aqui terminou ocorrendo, nada impede que o magistrado se valha dos elementos ali constantes para formar a sua convicção. No caso, ao contrário do afirmado pelos impetrantes, as instâncias ordinárias indeferiram o benefício da progressão de regime à paciente com amparo em dados concretos, colhidos de pareceres técnicos exarados por psicólogos e assistentes sociais. Com efeito, as referências à gravidade do delito e à longa pena a cumprir foram feitas a título de obiter dictum. Outrossim, não há como, nessa via estreita do habeas corpus, avaliar o requisito subjetivo exigido para fins de benefícios da execução, mormente se o Juízo de primeiro grau, mais próximo à realidade dos fatos, concluiu, com base nos elementos de convicção produzidos, que a reeducanda ainda não está apta a retornar ao convívio em sociedade. Ordem não conhecida" . Como visto, a via eleita não comporta a possibilidade de reexame do conjunto fático probatório. Quanto à crise decorrente do coronavírus Covid-19, observa-se a impetração de inúmeros habeas corpus apenas com este fundamento. Porém, tal crise não afasta a obrigação dos impetrantes em demonstrar a ocorrência de constrangimento ilegal, que ofende o direito de ir e vir, não bastando alegações genéricas, sem qualquer lastro fático. Neste sentido, o Código de Ética da Advocacia, afirma que o advogado, quer particular, quer público, deve desaconselhar lides temerárias, sendo-lhe vedado expor fatos os falseando ou usando de má-fé. A simples alegação de que em face da pandemia o paciente corre risco de contágio e, portanto, deve ser solto, aparenta uma lide, no mínimo, temerária. Ora, todos estão sujeitos à pandemia, estejam ou não presos, fato notório e que, portanto, dispensa prova. Assim esta alegação, por si só, não acarreta a obrigação de liberação. E isso porque se todos correm risco, soltos ou presos, fica claro que o risco por si só não justifica a liberação. Neste sentido, em recente decisão monocrática o i. Des. Alberto Anderson, deste e. Tribunal, comentando a horizontalidade do risco de contágio além de independer de prova nos autos por ser notório, vem sendo destacado exacerbadamente em todos os tipos de mídia, sendo assunto de conversa e debates públicos entre vários especialistas esclareceu que Príncipes, como os de Mônaco e da Inglaterra; políticos de vários países; pessoas com alto poder aquisitivo e mesmo aqueles que lançando mão de todos os equipamentos de segurança e regras de proteção como aqueles os profissionais da saúde que combatem a pandemia chegaram a ser contaminados. Como destacou, todos os habitantes do planeta correm risco efetivo de serem contaminados. Logo, estando presos ou soltos, o risco existe, indicando que a pandemia não autoriza ou mesmo indica que ao serem soltos os presos não serão contaminados. Também digno de nota o habeas corpus n.º 2053753-37.2020.8.26.0000, das Defensorias Públicas do Estado e da União, para que todas as pessoas presas e aquelas que vierem a ser presas, os que se encontram em regime semiaberto e aqueles condenados por crimes sem violência ou ameaça ou seja, cumprindo em regime fechado sejam liberadas. Indicam como autoridade coatora este Tribunal e todos os juízes criminais e de execução criminal. Inúmeras incongruências na presente impetração. Como bem expôs o i. Des. Guilherme G. Strenger, d. Presidente da Seção de Direito Criminal deste Tribunal, não ficou definido quem seriam as autoridades coatoras para indicação da competência. Ademais, sendo este Tribunal uma das autoridades coatoras, não poderia ele próprio ser o órgão que vai apreciar eventual nulidade, o que configura erro técnico patente. Também indica o i. Des. Guilherme G. Strenger que a Recomendação n.º 62/2020, do c. Conselho Nacional de Justiça, não afasta nem retira a competência jurisdicional dos magistrados para avaliação do caso concreto, não gerando qualquer direito líquido e certo para quem quer que seja. A inicial não indica quem seriam os pacientes, quais as especificidades e quais são as circunstâncias do caso concreto que os colocaria no grupo de risco, nem tampouco a existência concreta decorrente da existência de pessoa contaminada a justificar a liberação. No mesmo sentido o indeferimento do habeas corpus coletivo pelo i. Min. Antônio Saldanha Palheiro, onde a Defensoria Pública da União deixava nas entrelinhas que todos os presos deveriam ser soltos, visto que a pandemia "tem o potencial de atingir praticamente todos os presos do país". Na Comissão de Direitos Humanos da ONU, a alta comissária Michelle Bachelet orientou outros países a "examinarem maneiras de libertar aqueles particularmente vulneráveis à covid-19, entre os detidos mais velhos e doentes, assim como os infratores de baixo risco. Reforçando esse critério mais restritivo, merece destaque estudo conduzido por Keith Ditcham, pesquisador especializado na análise da polícia e da criminalidade organizada do Britain's Royal United Services Institute, segundo o qual cenários como os do Brasil, da Colômbia, da Venezuela e do Egito serão mais difíceis de administrar se um número considerável de prisioneiros for libertado". Como visto impetrações genéricas sem lastro em parâmetros factíveis não justificam a liberação indiscriminada de presos. Por tais motivos, alegação de que corre risco de ser contaminado não implica em qualquer constrangimento, uma vez que, infelizmente, todos nós estamos sob risco de contaminação. Ademais, a soltura não necessariamente diminui o risco, já que tal não é inerente ao sistema carcerário. Pelo contrário, em um microssistema onde a visita externa está suspensa e não há caso confirmado no estabelecimento em que se encontra o paciente, estatisticamente a chance de se contrair o vírus é menor que no caso do sujeito solto a circular livremente pelas ruas, tanto é que as medidas tomadas são exatamente de restrição a sair de casa. Em poucas palavras, não foram revogados os dispositivos legais que autorizam a prisão, quer definitiva, quer processual, quando presentes os seus requisitos, apenas pelo risco de contaminação. A Recomendação n.º 62 do Conselho Nacional de Justiça, ao fazer expressa referência à competência do CNJ, prevista no artigo 103-B, §4º, da Constituição Federal, reafirma que seu papel não se confunde com determinação ou controle dos atos jurisdicionais, como constou de seu artigo 1º. Tanto assim, que em entrevista dada em 05 de abril p.p., o Ministro Fux, explicitou que se trata de recomendação e não determinação. Fica patente que os casos devem ser analisados individualmente, em face das circunstâncias concretas que apresentem. Desta forma, no tocante à concessão de prisão domiciliar em razão de doença grave, exige-se, inicialmente, que o paciente esteja no regime aberto. Tal exigência decorre do artigo 117 da Lei de Execução Penal. Aliás, não basta simplesmente que o paciente esteja no regime aberto e possua doença grave, deve a doença estar em face que acarrete debilidade extrema e que não possa ser tratada no local. Guilherme de Souza Nucci ensina que "não se trata de ser enfermo, mesmo gravemente; a lei é enfática ao demandar debilidade extrema em função dessa doença. Por isso, cabe a avaliação judicial para cada caso, sem que se possa automatizar a concessão da prisão domiciliar. Ilustrando, o portador do vírus da AIDS, mesmo com manifestações de enfermidades oportunistas, não faz jus à prisão em domicílio, salvo se estiver em situação de limite, debilitado a ponto de não representar qualquer perigo à sociedade". No mesmo sentido a jurisprudência do Superior Tribunal de Justiça. "HABEAS CORPUS. SUBSTITUIÇÃO AO RECURSO ORDINÁRIO. IMPOSSIBILIDADE. TENTATIVA DE HOMICÍDIO QUALIFICADO CONTRA POLICIAIS MILITARES NO EXERCÍCIO DE SUA FUNÇÃO. PRISÃO EM FLAGRANTE CONVERTIDA EM CUSTÓDIA PREVENTIVA. PRETENDIDA SUBSTITUIÇÃO POR RECOLHIMENTO DOMICILIAR. ART. 318, INCISO II, DO CPP. EXTREMA DEBILIDADE NO ESTADO DE SAÚDE DO RÉU E IMPOSSIBILIDADE DE RECEBER TRATAMENTO MÉDICO NO ESTABELECIMENTO PRISIONAL. FALTA DE COMPROVAÇÃO. COAÇÃO ILEGAL NÃO DEMONSTRADA. WRIT NÃO CONHECIDO. [...] Não comprovada a extrema debilidade do recluso ou a gravidade da doença e, asseguradas todas as garantias para que sejam atendidas suas necessidades de saúde dentro do estabelecimento prisional, inviável o deferimento da prisão domiciliar, especialmente em se considerando a gravidade dos delitos pelos quais já foi, inclusive, pronunciado. [-] Habeas corpus não conhecido". (STJ - HC 389.009/TO, Rel. Ministro JORGE MUSSI, QUINTA TURMA, julgado em 13/06/2017, DJe 22/06/2017) Como ressaltou o i. Des. Luiz Otávio de Oliveira Rocha, também deste Tribunal: "É dizer, se nem mesmo à pessoa que já está acometida de doença grave cabe reconhecer direito automático ao cumprimento da pena em domicílio, parece que, mesmo diante do conteúdo da Recomendação nº 62/2020, é dever dos magistrados brasileiros aferir em cada situação a conveniência de concessão do direito à "prisão domiciliar" (que "prisão não é", como ressaltou o i. Ministro do STF Marco Aurélio de Mello em 14 de novembro de 2013, quando se discutia em plenário o regime de cumprimento das penas dos condenados na Ação Penal 470), segundo a verificação de tratar-se o interessado de pessoa presa "em estabelecimentos penais com ocupação superior à capacidade, que não disponham de equipe de saúde lotada no estabelecimento, sob ordem de interdição, com medidas cautelares determinadas por órgão de sistema de Poder Judiciário Conselho Nacional de Justiça jurisdição internacional, ou que disponham de instalações que favoreçam a propagação do novo coronavírus", como, aliás, estabelece o seu artigo 5º, inciso I, letra b. E é natural que seja assim. Afinal, o i. Min. SEBASTIÃO REIS JÚNIOR, do C. Superior Tribunal de Justiça, ao proferir, decisão monocrática no HC nº 568.693/ES (no qual figura como impetrante/requerente a Defensoria Pública do Estado do Espírito Santo), observou que, "conforme asseverado pela requerente, o quadro fático apresentado pelo Espírito Santo é idêntico ao dos demais Estados brasileiros: o risco de contágio pela pandemia do coronavírus (Covid-19) é semelhante em todo o país, assim como o é o quadro de superlotação e de insalubridade dos presídios brasileiros". Com efeito, a Lei de Execução Penal estabelece o direito à assistência à saúde, incluído, se necessário, atendimento médico (no próprio estabelecimento e, se o caso, em local diverso), como se verifica dos seguintes dispositivos: "Art. 14. A assistência à saúde do preso e do internado de caráter preventivo e curativo, compreenderá atendimento médico, farmacêutico e odontológico. '§ 1º (Vetado). '§ 2º Quando o estabelecimento penal não estiver aparelhado para prover a assistência médica necessária, esta será prestada em outro local, mediante autorização da direção do estabelecimento. '§ 3º Será assegurado acompanhamento médico à mulher, principalmente no pré-natal e no pós-parto, extensivo ao recém-nascido. (Incluído pela Lei nº 11.942, de 2009) '(...) 'Art. 40. Impõe-se a todas as autoridades o respeito à integridade física e moral dos condenados e dos presos provisórios. '(...) 'Art. 43. É garantida a liberdade de contratar médico de confiança pessoal do internado ou do submetido a tratamento ambulatorial, por seus familiares ou dependentes, a fim de orientar e acompanhar o tratamento. 'Parágrafo único. As divergências entre o médico oficial e o particular serão resolvidas pelo Juiz da execução. '(...) 'Art. 120. Os condenados que cumprem pena em regime fechado ou semi-aberto e os presos provisórios poderão obter permissão para sair do estabelecimento, mediante escolta, quando ocorrer um dos seguintes fatos: 'I - falecimento ou doença grave do cônjuge, companheira, ascendente, descendente ou irmão; 'II - necessidade de tratamento médico (parágrafo único do artigo 14)." Desse modo, apenas diante do risco que, repita-se, é horizontal de que possam contrair o Covid-19, parece prematuro concluir sobre se a soltura dos condenados pela prática de crime é conveniente para eles próprios e para os demais membros da coletividade, sem que se deva constatar, a priori, a impossibilidade da tomada de outras medidas de prevenção contra o contágio pelas autoridades incumbidas da administração dos estabelecimentos prisionais. E isso, levando-se em conta que a superlotação desses estabelecimentos no país, embora constitua problema real e bem conhecido, não afeta de modo uniforme todos os estabelecimentos, em todos os Estados, em muitos deles havendo enfermaria para atendimento de casos não graves e espaço suficiente a permitir o convívio em níveis de distanciamento não muito diversos daqueles a que estão sujeitos os habitantes das grandes cidades, hoje segregados por recomendação dos governos e entidades responsáveis pela saúde pública. De fato, em que pese ser inegável o problema de superlotação acima referido, impende considerar outro dado não menos relevante sobre a realidade sócio-econômica do Brasil, que não pode ser simplesmente ignorado na abordagem da questão das pessoas que se encontram presas. Qualquer um que consulte os dados oficiais do  (IBGE) resultantes do trabalho de coleta do Censo de 2010, encontrará que naquele ano foi constatado que cerca de 11,4 milhões de pessoas (6% da população do país) viviam em aglomerados subnormais. Com o censo, o identificou a existência de 6.329 favelas no Brasil, distribuídas em 323 dos 5.565 municípios brasileiros. O conceito de aglomerado subnormal (que o IBGE passou a utilizar em 2010 em substituição a "Zonas Especiais de Interesse Social") compreende todo e qualquer conjunto constituído por no mínimo 51 unidades habitacionais (barracos, casas etc.) em terrenos de propriedade alheia (pública ou particular), disposto de forma densa e desordenada, tendo como característica comum a carência de serviços públicos, inclusive os essenciais. Ora, todo brasileiro com conhecimento mínimo da realidade nacional sabe como são diminutas e precárias as moradias das favelas (ou "comunidades"). Sabe, também, que esse contingente de mais de onze milhões de brasileiros (mais de dezes vezes superior ao total de indivíduos presos em estabelecimentos penitenciários em todo o país) não se encontra em condições de observar com rigor as recomendações das entidades de saúde pública sobre isolamento e restrição de contatos sociais. Não é sem razão, aliás, que o governo federal editou, igualmente em 1º de abril, a Portaria (conjunta) nº 54, visando "Aprovar recomendações gerais aos gestores e trabalhadores do Sistema Único de Assistência Social (SUAS) dos Estados, Municípios e do Distrito Federal com o objetivo de garantir a continuidade da oferta de serviços e atividades essenciais da Assistência Social" (art. 1º), considerando "a disseminação do novo coronavírus (COVID-19) e sua classificação mundial como pandemia e... a importância de o Estado brasileiro garantir a oferta regular de serviços e programas socioassistenciais voltados à população mais vulnerável e em risco social e promover a integração necessária entre o Sistema Único de Assistência Social e o Sistema Único de Saúde". Daí que, mesmo desprezando-se todos os óbices legais já mencionados, mas levando-se em conta que as autoridades públicas têm recomendado aos cidadãos que se mantenham resguardados em suas casas e procurem atendimento especializado somente quando presentes alguns dos sintomas da enfermidade causada pelo Covid-, parece prematuro estimar como positivo o impacto na disseminação da doença que decorreria da concessão sistemática a presos condenados do benefício da "prisão domiciliar". Afinal, se os índices de reincidência criminal no país se aproximam dos 70%, como alguns ii. Presidentes do Conselho Nacional de Justiça têm destacado nos últimos anos, é indispensável obtemperar que a soltura indiscriminada de presos assintomáticos, que se encontram em presídios onde há enfermarias e possibilidade de isolamento daqueles que apresentem sintomas iniciais de gripe, poderia implicar em agravamento do gravíssimo problema da segurança pública no país, que há anos figura no grupo dos países com os maiores índices de criminalidade do planeta. E ao argumento de que a questão da segurança pública não é prioritária, senão a questão humanitária, haveria que responder-se, então, que a recomendação adequada seria no sentido da soltura de todos os presos, inclusive aqueles que cumprem penas longas por crimes graves e gravíssimos, cujo risco de contágio obviamente não é diverso do que afeta os demais. Daí que, sem descuidar da Recomendação nº 62/2020, emitida pelo C. Conselho Nacional de Justiça, ante a ausência de demonstração pelo paciente de que se enquadra em grupo de risco ("pessoas acima dos 60 anos e aquelas com doenças crônicas, como diabetes e doenças cardiovasculares", segundo informação oficial), ou que padece de especial condição de vulnerabilidade no presídio em que se encontra, não cabe reconhecer a seu favor a existência de cerceamento ilegal de seu direito de locomoção passível de ser sanado via deste Habeas Corpus. Neste ponto, importante mencionar que não houve relato de nenhum detento diagnosticado com COVID-19 na unidade prisional em que se encontra detido o paciente". Quanto aos presos processuais, mesmo que o crime não tenha sido praticado durante a quarentena, a situação é semelhante. Não basta o risco de contaminação, que como exposto, afeta a 'todos. Para a liberação necessária a ponderação entre o risco concreto à vida do paciente aprisionado processualmente o que implica vários fatores, fatores estes que devem ser demonstrados de forma clara na inicial e devidamente acompanhados desde já pelos documentos a comprovar o alegado, tais como fazer parte do grupo de risco, existência de contaminados, ausência de meios de tratamento no local, inexistência de isolamento de eventuais infectados etc. juntamente com o risco para a sociedade que também demanda vários pontos, tais como a gravidade do crime praticado, o prognóstico de reincidência etc. No caso dos autos tais fatos não se viram presentes. Observa-se que o i. Des. Ricardo Mair Anafe, Corregedor Geral de Justiça, implementou normas para o combate da propagação do vírus nos presídios, como a proibição de saídas temporárias uma vez que inexistindo pessoa contaminada no interior do presídio, a contaminação só poderia ocorrer vindo de fora, sendo certo que o Secretário de Administração Penitenciária do Estado também vem atuando, isolando eventuais infectados. A Recomendação n.º 62 do Conselho Nacional de Justiça, no seu artigo 4º, deixa patente que não há que se falar em liberação de presos provisórios "por atacado", nem tampouco indica a suspensão dos dispositivos que autorizam a prisão preventiva. Inexistindo qualquer documentação comprobatória de eventual doença grave, de forma que não preenche todos os requisitos para a liberação. Ademais, o paciente sequer compõe o grupo de risco alvo da pandemia, visto que tem 55 anos de idade. Ademais, ainda que o paciente possuísse idade superior à 60 anos ou doença grave, estando dentre aquele sujeitos mais vulneráveis mencionados no artigo 1°, parágrafo único, inciso I da Recomendação 62/2020 do Conselho Nacional de Justiça, é certo que os presos recolhidos aos estabelecimentos prisionais do estado de São Paulo, além do isolamento característico da segregação condição atualmente exigida da maioria dos cidadãos paulistas , também foram protegidos por medidas administrativas e judiciais, dentre elas a suspensão de visitas. Aliás, sequer se cogitou a presença de pessoa infectada com o mencionado vírus no estabelecimento no qual se encontra a paciente, nem tampouco comprovação de falta de suporte médico no estabelecimento prisional. Portanto, inexiste periculum in mora que justifique a concessão do pedido. Por fim, tem-se que a dispensa de exames criminológicos para fins de progressão de regime foi apenas uma recomendação do Ilustre Ministro Marco Aurélio do Supremo Tribunal Federal em decisão proferida recentemente, de sorte que tal entendimento sequer foi unanimemente firmado pela Corte, tampouco foi objeto de jurisprudência. Contudo, a decisão atacada juntada às folhas 30 não menciona em qual data foi determinada a realização do exame criminológico para fins de aferição do requisito subjetivo. Nesse caso, necessária a vinda de informações de modo a esclarecer se já houve a designação de data para realização do exame criminológico e, se não, quais os motivos para tal demora. Após, tornem conclusos para apreciação da liminar. Int.</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        07/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Conclusos para o Relator (Expedido Termo com Conclusão)
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">LAURO MENS DE MELLO</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        07/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Distribuição por Competência Exclusiva
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Prevenção pela Apelação 0014615-15.2018.8.26.0050
+Órgão Julgador: 88 - 6ª Câmara de Direito Criminal
+Relator: 12334 - Lauro Mens de Mello</span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        07/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Informação
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">Auxiliando o Desembargador Machado de Andrade </span>
+
+        
+    </td>
+</tr>
+<tr class="fundoEscuro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        06/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Processo encaminhado para a Distribuição de Originários
+            
+        
+
+        
+
+        <br><span style="font-style: italic;"></span>
+
+        
+    </td>
+</tr>
+<tr class="fundoClaro movimentacaoProcesso" style="">
+<td width="120" style="vertical-align: top" class="dataMovimentacaoProcesso">
+        06/07/2020
+    </td>
+    <td width="20" valign="top" aria-hidden="true">
+        
+    </td>
+    <td style="vertical-align: top; padding-bottom: 5px" class="descricaoMovimentacaoProcesso">
+        
+
+        
+            
+            
+                Processo Cadastrado
+            
+        
+
+        
+
+        <br><span style="font-style: italic;">SJ 1.2.6.1 - Serv. de Entrada e Distrib. de Feitos Originários de Dir. Criminal</span>
+
+        
+    </td>
+</tr>
+</tbody>
+</table>
+<div id="divLinksTituloBlocoMovimentacoes" style="text-align:right">
+		
+
+
+
+
+
+
+
+<input id="mensagemNaoExibidamovimentacoes" type="hidden" value=""><input id="linkNaoExibidomovimentacoes" type="hidden" value="Recolher"><span id="mensagensExibindomovimentacoes" class="mensagemExibindo">
+
+</span>  
+<a id="linkmovimentacoes" href="javascript:" class="linkNaoSelecionado unj-link-collapse">
+    <span id="setasDireitamovimentacoes" class="setasDireita">
+        <i class="unj-link-collapse__icon glyph glyph-chevron-down"></i>
+    </span>
+    Mais</a>
+
+<script>
+	$(function() {
+		var controlarLink = function() {
+			var $linkNaoExibido = $('input#linkNaoExibidomovimentacoes');
+			var conteudoLinkNaoApresentado = $linkNaoExibido.val();
+			var $link = $('a#linkmovimentacoes');
+
+			$linkNaoExibido.val($link.html());
+			$link.html(conteudoLinkNaoApresentado);
+		};
+
+		var controlarMensagem = function() {
+			var $mensagemNaoExibida = $('input#mensagemNaoExibidamovimentacoes');
+			var $spanMensagem = $('span#mensagensExibindomovimentacoes');
+			var mensagemExibida = $spanMensagem.html();
+			var mensagemNaoExibida = $mensagemNaoExibida.val();
+
+			$spanMensagem.html(mensagemNaoExibida);
+			$mensagemNaoExibida.val(mensagemExibida);
+		};
+
+		var controlarMensagemLink = function() {
+			controlarMensagem();
+			controlarLink();
+		};
+
+		var esconderElementosExtrasMostrarDefault = function() {
+			$('#tabelaTodasMovimentacoes').hide();
+			$('#tabelaUltimasMovimentacoes').show();
+		};
+
+		var mostrarElementosExtrasEsconderDefault = function() {
+			$('#tabelaUltimasMovimentacoes').hide();
+			$('#tabelaTodasMovimentacoes').show();
+		};
+
+		var initPagina = function() {
+            var setasDireita = '<span id="setasDireitamovimentacoes" class="setasDireita"><i class="unj-link-collapse__icon glyph glyph-chevron-up"></i></span>';
+			var $linkEscondido = $('input#linkNaoExibidomovimentacoes');
+			$linkEscondido.val(setasDireita+$linkEscondido.val());
+		};
+
+		var bindLink = function() {
+			var $link = $('a#linkmovimentacoes');
+			$link.funcToggle('click', mostrarElementosExtrasEsconderDefault, esconderElementosExtrasMostrarDefault);
+			$link.bind('click', controlarMensagemLink);
+		};
+
+		initPagina();
+		bindLink();
+		esconderElementosExtrasMostrarDefault();
+	});
+</script>
+</div>
+
+			  	
+
+			  	
+
+			  	
+			  	
+			  	
+			
+	  	
+			
+				
+				
+			  	
+
+				
+		  			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Subprocessos e Recursos</h2>
+		
+	
+</div>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1"><tr>
+<td colspan="3" align="left" id="processoSemIncidentes">
+			 	
+			 		
+			 			Não há subprocessos ou recursos vinculados a este processo.
+			 		
+			 		
+			 	
+			  </td> 
+		    </tr></table>
+<!--  incidentes --><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Petições diversas</h2>
+		
+	
+</div>
+<!--  Tabela de petições diversas -->
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<thead>
+<tr class="label">
+<th width="140" style="text-align:left">Data</th>
+			      <th width="*">Tipo</th>
+			    </tr>
+<tr class="fundoEscuro" height="2" aria-hidden="true">
+<td></td>
+					<td></td>
+				</tr>
+</thead>
+<tbody><tr class="fundoClaro">
+<td width="140" style="text-align:left">
+							29/07/2020
+						</td>
+						<td width="*">
+							Parecer da PGJ<br>
+</td>
+					</tr></tbody>
+</table>
+<!--  Tabela de petições diversas --><div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Composição do Julgamento</h2>
+		
+	
+</div>
+	
+	<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="label">
+<td width="140">Participação</td>
+		  <td>Magistrado</td>
+		</tr>
+<tr class="fundoEscuro" height="2">
+<td></td>
+			<td></td>
+		</tr>
+</table>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="fundoClaro itemComposicaoJulgamento">
+<td valign="top" width="140" class="label" style="padding-bottom: 5px">
+		      Relator
+			</td>
+			<td valign="top" style="padding-bottom: 5px">
+		      Mens de Mello (24492)
+		    </td>
+		  </tr>
+<tr class="fundoEscuro itemComposicaoJulgamento">
+<td valign="top" width="140" class="label" style="padding-bottom: 5px">
+		      2º 
+			</td>
+			<td valign="top" style="padding-bottom: 5px">
+		      José Raul Gavião de Almeida 
+		    </td>
+		  </tr>
+<tr class="fundoClaro itemComposicaoJulgamento">
+<td valign="top" width="140" class="label" style="padding-bottom: 5px">
+		      3º 
+			</td>
+			<td valign="top" style="padding-bottom: 5px">
+		      Machado de Andrade 
+		    </td>
+		  </tr>
+</table>
+<div style="padding-top: 10px;">
+	
+	
+		
+		
+			<h2 class="subtitle">Julgamentos</h2>
+		
+	
+</div>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1">
+<tr class="label">
+<td align="left" valign="top" width="150">Data</td>
+		<td align="left" valign="top" width="220">Situação do julgamento</td>
+		<td align="left" valign="top" width="*">Decisão</td>
+	  </tr>
+<tr class="fundoEscuro" height="2">
+<td></td>
+		<td></td>
+		<td></td>
+	  </tr>
+</table>
+<table style="margin-left:15px; margin-top:1px;" align="center" width="98%" border="0" cellspacing="0" cellpadding="1"><tr class="fundoClaro">
+<td valign="top" align="left" width="150">
+		      12/08/2020
+			</td>
+			<td align="left" valign="top" width="220">
+		      Julgado
+		    </td>
+			<td align="left" valign="top" width="*">
+		      JULGARAM improcedente a presente ação de habeas corpus e DENEGARAM A ORDEM, ratificando a liminar. V.U.
+		    </td>
+		  </tr></table>
+<br><br><footer><nav class="navbar__footer"><div class="navbar__footer__container">
+
+            <ul class="navbar__footer__list-brand">
+<li class="navbar__footer__list-brand__item">
+                    <a href="https://www.softplan.com.br/solucoes/saj-tribunais/" class="navbar__footer__list-brand__item__link link_softplan_tribunais">
+                        <img src="https://esaj.tjsp.jus.br/esaj/img/brand/icon-saj.png" alt="SAJ"></a>
+                </li>
+                <li class="navbar__footer__list-brand__item">
+                    <a href="https://www.softplan.com.br/" class="navbar__footer__list-brand__item__link link_softplan">
+                        <img src="https://esaj.tjsp.jus.br/esaj/img/brand/icon-softplan.png" alt="Softplan"></a>
+                </li>
+            </ul>
+<ul class="navbar__footer__list-actions"></ul>
+</div>
+    </nav></footer>
+</div>
+	
+
+</body>
+</html>
